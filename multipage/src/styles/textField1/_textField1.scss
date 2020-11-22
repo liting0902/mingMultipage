@@ -1,0 +1,121 @@
+/*textField1.scss*/
+
+// ::-webkit-input-placeholder {
+//     opacity: 0;
+//     transform: translate(.1em, -.1em) scale(1);
+//     transition: inherit;
+//     -webkit-transform: translate(.1em, -.1em) scale(1);
+//     -moz-transform: translate(.1em, -.1em) scale(1);
+//     -ms-transform: translate(.1em, -.1em) scale(1);
+//     -o-transform: translate(.1em, -.1em) scale(1);
+//     -webkit-transition: inherit;
+//     -moz-transition: inherit;
+//     -ms-transition: inherit;
+//     -o-transition: inherit;
+// }
+
+$textField1_bgColor:#fafafa;
+$textField1_inputColor:#636363;
+$textField1_inputColor_BottomLine:#757575;
+$textField1_labelColor_Down:#999;
+$textField1_labelColor_Up:#4a89dc;
+$textField1_barColor:#4a89dc;
+.textField1 {
+    position: relative;
+    margin-bottom: 45px;
+
+    & input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        -webkit-appearance: none;
+        display: block;
+        background: $textField1_bgColor;
+        color: $textField1_inputColor;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $textField1_inputColor_BottomLine;
+    }
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: orange;
+        opacity: 0;
+        /* Firefox */
+    }
+    & input:focus::-webkit-input-placeholder {
+        //opacity: 1;
+        opacity: 0;
+    }
+    
+    // & input:focus::-webkit-input-placeholder {
+    //     opacity: 1;
+    // }
+
+    & input:focus {
+        outline: none;
+    }
+    
+    
+    /* Label */
+    
+    & label {
+        color: $textField1_labelColor_Down;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: all 0.2s ease;
+    }
+    
+    
+    /* active */
+    
+    & input:not(:placeholder-shown)~label,
+    & input:focus~label {
+        top: -20px;
+        transform: scale(.75);
+        left: -2px;
+        /* font-size: 14px; */
+        color: $textField1_labelColor_Up;
+    }
+    
+    
+    /* Underline */
+    
+    & span {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    //<!-- === blue bar animation ==== -->
+    & span:before,
+    & span:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 1px;
+        position: absolute;
+        background: $textField1_barColor;
+        transition: all 0.2s ease;
+    }
+    
+    & span:before {
+        left: 50%;
+    }
+    
+    & span:after {
+        right: 50%;
+    }
+    
+    
+    /* active */
+    
+    & input:focus~span:before,
+    & input:focus~span:after {
+        width: 50%;
+    }
+    
+}
+

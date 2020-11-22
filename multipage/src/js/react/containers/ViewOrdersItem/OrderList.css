@@ -1,0 +1,44 @@
+.table {
+  color: #e0e0e0;
+}
+
+.table tr {
+  cursor: pointer;
+}
+
+.expandingRowBackground {
+  background-color: #004e30;
+}
+
+:local(.productBox) {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid red;
+  margin: 3px;
+}
+
+:local(.productBox div) {
+  border: 1px solid yellow;
+  margin: 2px;
+}
+
+:local(.productBox img) {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+:local(.boxProductName) {
+  width: 200px;
+}
+
+:local(.boxProductUnitPrice) {
+  width: 100px;
+}
+
+:local(.boxProductAmount) {
+  width: 100px;
+}
+
+:local(.boxProductCountPrice) {
+  width: 100px;
+}

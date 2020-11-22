@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+    <style>
+        html,
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="module">
+        
+        let htmlPath = 'a1.txt'
+        let cssPath = 'a2.txt'
+        getFetchResult(htmlPath, cssPath)
+        .then((result) => {
+            console.log(JSON.stringify(result,null,4))
+        })
+
+        function fetchCss(cssPath){
+            return fetch(cssPath)
+            .then((res) => {
+                return res.text()
+            })
+        }
+        function getFetchResult(htmlPath, cssPath){
+            return fetch(htmlPath)
+            .then((res) => {
+                return res.text()
+            })
+            .then((text) => {
+                let htmlObject = {html:text}
+                if(!cssPath)
+                    return htmlObject
+                else
+                    return Promise.all([htmlObject, fetchCss(cssPath)])
+            })
+            .then((allResult) => {
+                // console.log("LOG:: getFetchResult -> allResult", allResult)
+                let rtnObject = allResult[0]//htmlObject
+                rtnObject.css=allResult[1]//css text
+                // {
+                //     "html": "aaaa",
+                //     "css": "bbbb"
+                // }
+                return rtnObject
+            })
+        }
+    </script>
+</body>
+
+</html>

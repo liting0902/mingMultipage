@@ -1,0 +1,26 @@
+:local .box1 {
+    border: 2px solid yellow;
+    margin: 5px;
+    padding: 4px;
+}
+
+:local .table1 {
+    margin: 15px;
+    font-size: 26px;
+    /* width: 200px; */
+    border: 3px solid lime;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+:local .table1 thead {
+    background-color: #009FCC;
+    padding: 10px;
+    border: 3px solid red;
+    color: #fff;
+}
+
+:local .table1 td {
+    border: 1px solid white;
+    padding: 5px;
+}

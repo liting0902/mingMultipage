@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-functions.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script> -->
+
+    <style>
+        #mocha-stats .progress {
+            float: right;
+            padding-top: 0;
+            color: white;
+            /**
+   * Set safe initial values, so mochas .progress does not inherit these
+   * properties from Bootstrap .progress (which causes .progress height to
+   * equal line height set in Bootstrap).
+   */
+            height: auto;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            background-color: initial;
+        }
+
+        #mocha-stats em {
+            color: white;
+        }
+
+        #mocha-stats canvas {
+            width: 40px;
+            height: 40px;
+        }
+
+        #mocha .test {
+            background-color: rgb(37, 37, 37);
+        }
+
+        #mocha h1 {            
+            font-size: 1.5em;
+        }
+        #mocha h2 {
+            font-size: 1em;
+        }
+
+        #mocha .suite .suite h1 {
+            font-size: 1.8em;
+        }
+        #mocha-stats{
+            font-size: 1em;
+        }
+        .run{
+            height: 30px;
+            width: 100px;
+        }
+        .displayNone{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <button id="btnRun" class="run">RUN</button>
+    <button id="btnAdd1" class="displayNone">dark</button>
+    <button id="btnAdd2" class="displayNone">light</button>
+    <!-- http://localhost:9000/#page-react
+    http://127.0.0.1:5500/ming1/console/src/firebase/Firebase.uitset.htm -->
+    
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+    <!-- <script src="../../node_modules/requirejs-plugins/lib/require.js"></script> -->
+    
+    <script class="mocha-init">
+        // mocha.setup({
+        //     ui: 'tdd',
+        // });
+
+        // mocha.setup({
+        //     allowUncaught: true,
+        //     asyncOnly: false,
+        //     bail: true,
+        //     checkLeaks: true,
+        //     forbidOnly: true,
+        //     forbidPending: true,
+        //     global: ['MyLib'],
+        //     retries: 3,
+        //     slow: '100',
+        //     timeout: '2000',
+        //     ui: 'bdd',
+        //     cleanReferencesAfterRun:false,
+        // });
+        // mocha.checkLeaks();
+    </script>
+    <script type="module" src="Conntect_2.js" class="mocha-exec"></script>
+    <!-- <script src="test.object.js"></script>
+    <script src="test.xhr.js"></script> -->
+    <script type="module" class="mocha-exec">
+        // import firebaseConfig from '../../../src/lib/firebaseConfig.mjs'
+        // console.log(firebaseConfig)
+        // mocha.run();
+    </script>
+</body>
+
+</html>

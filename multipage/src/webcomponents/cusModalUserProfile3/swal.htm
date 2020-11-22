@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swal</title>
+    <style>
+        html,body{
+            background-color: black;
+            color: white;
+        }
+        button{
+            height: 30px;
+            width: 100px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./swal.css">
+</head>
+<body>
+    <button id="btnTest1">11111</button>
+    <button id="btnTest2">22222</button>
+    <button id="btnTest3">33333</button>
+    <button id="btnTest4">44444</button>
+    <label class="labelUser">
+        <input type="text" placeholder="帳號" />
+    </label>
+    <form id="formModifyPassword">
+        <div class="inputField1">
+            <span class="titleWhite">輸入舊密碼</span>
+            <input type="password"  required >
+        </div>
+        <div class="inputField1">
+            <span class="titleWhite">輸入新密碼</span>
+            <input type="password" required >
+        </div>
+        <div class="inputField1">
+            <span class="titleWhite">再次輸入新密碼</span>
+            <input type="password"  required >
+        </div>
+        <button id="btnValid">Check Form Valid</button>
+    </form>
+
+    <script src="./swal.js"></script>
+</body>
+</html>

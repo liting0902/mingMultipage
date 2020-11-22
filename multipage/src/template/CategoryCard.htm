@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CategoryCard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    
+    <div class="bd3 flexCenter">
+        <section class="sec2">
+            <ul id="ulCategory" class="flexStart ulStyle">
+            </ul>
+        </section>
+        <section class="bd4 sec1">
+            <header class="headerTitle">牛肉</header>
+            <p class="textContent1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sapiente explicabo
+                commodi maiores iure deserunt, debitis necessitatibus minima! Impedit ipsam eius dolore cum excepturi
+                eos
+                ipsa quia quisquam facere et?</p>
+            <ul id="ulCards" class="bd2 ulStyle flexStart">
+                <li class="bd1 food">
+                    <div>百頁豆腐</div>
+                    <img class="imgFood" src="noodle1.png" alt="">
+                    <div>NT$ 20</div>
+                    <hr class="hrDot">
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <template>
+        <li id="categoryCard" class="Category">
+            <div>牛肉</div>
+        </li>
+        <li id="foodCard" class="bd1 food">
+            <div>百頁豆腐</div>
+            <img class="imgFood" src="noodle1.png" alt="">
+            <div>NT$ 20</div>
+            <hr class="hrDot">
+        </li>
+    </template>
+    <script>
+        let comp1 = document.querySelector('template')
+        //-----------Category
+        let ulCategory = document.querySelector('#ulCategory')
+        for (let i = 0; i < 5; i++) {
+            let elemLI = comp1.content.querySelector('#categoryCard').cloneNode(true);
+            ulCategory.appendChild(elemLI)
+        }
+        //-----------Food
+        let ulCards = document.querySelector('#ulCards')
+        for (let i = 0; i < 10; i++) {
+            let elemLI = comp1.content.querySelector('#foodCard').cloneNode(true);
+            ulCards.appendChild(elemLI)
+        }
+    </script>
+</body>
+
+</html>

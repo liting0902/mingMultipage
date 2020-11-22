@@ -1,0 +1,4 @@
+{"scripts": {
+    "aa":"sass ./ ../../../../pages/index/ ../../components/CategoryCard --watch --no-source-map"
+    
+}}

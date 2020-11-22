@@ -1,0 +1,4 @@
+{"scripts": {
+    "aa":"sass ./ ../../../styles/base  --watch --no-source-map"
+    
+}}

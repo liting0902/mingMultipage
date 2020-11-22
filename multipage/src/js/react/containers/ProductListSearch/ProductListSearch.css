@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #06101b;
+  color: white;
+}
+
+.b-displayNone {
+  display: none;
+}
+
+.b-textCenter {
+  text-align: center;
+}
+
+.b-flexStart {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.b-flexCenter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.b-ulStyleNone, .ulScrollButtons {
+  list-style-type: none;
+}
+
+.b-imgContainer, .productCard .imgContainer {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.b-imgContainer img, .productCard .imgContainer img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.b-btnGolden, .ulScrollButtons .btnCategory, .productCard .priceBottom .addButton, .tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divboxHorizontal .btnAdd {
+  display: block;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  /*background-color: $colorGold;
+  */
+  color: #beac74;
+  border: #beac74 2px solid;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 20px;
+}
+.b-btnGolden:hover, .ulScrollButtons .btnCategory:hover, .productCard .priceBottom .addButton:hover, .tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divboxHorizontal .btnAdd:hover {
+  color: white;
+  background-color: #beac74;
+  transition-duration: 0.3s;
+  border-radius: 20px;
+}
+.b-btnGolden:focus, .ulScrollButtons .btnCategory:focus, .productCard .priceBottom .addButton:focus, .tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divboxHorizontal .btnAdd:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.boxProductListSearch {
+  max-width: 970px;
+}
+
+.boxDeliveryTimeAddress {
+  margin-top: 5rem;
+}
+
+.ulScrollButtons {
+  z-index: 11;
+  position: sticky;
+  top: 54px;
+  background-color: #06101b;
+}
+.ulScrollButtons .btnCategory {
+  color: #beac74;
+  width: 7rem;
+  padding: 0.3rem;
+  margin: 0.7rem;
+}
+
+.CategoryCard {
+  margin-top: 60px;
+  background-color: #06101b;
+  width: 90%;
+}
+.CategoryCard .headerTitle {
+  font-size: 2em;
+  font-weight: bold;
+  height: 2em;
+  border-bottom: white solid 3px;
+  text-align: center;
+  color: #beac74;
+}
+
+.tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divboxHorizontal .btnAdd, .productCard .priceBottom .addButton {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+.tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divboxHorizontal .btnAdd:hover, .productCard .priceBottom .addButton:hover {
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+.productCard {
+  width: 250px;
+}
+.productCard .priceBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productCard .priceBottom div, .productCard .priceBottom button {
+  margin: 0 0.9rem;
+}
+.productCard .hrDot {
+  border: 1px dashed white;
+}
+
+.boxShopCart {
+  display: inline-block;
+  border: 2px solid #beac74;
+  padding: 1rem;
+  margin: 10px;
+  width: 300px;
+  max-height: 80vh;
+  overflow: auto;
+  position: fixed;
+  top: 60px;
+  left: 970px;
+}
+
+.tableShopcart {
+  /* display: inline-flex; */
+  width: 100%;
+  /* padding: .4em; */
+  border-collapse: collapse;
+  /* border-collapse: separate;
+    border-spacing: 15px; */
+  font-size: 1.5em;
+}
+.tableShopcart .trShopitem {
+  /* display: block; */
+  border-bottom: #beac74 4px solid;
+}
+.tableShopcart .trShopitem .tdProductName {
+  vertical-align: bottom;
+}
+.tableShopcart .trShopitem .tdPriceAmount {
+  text-align: right;
+  /* margin: auto 0 auto auto; */
+}
+.tableShopcart .trShopitem .tdPriceAmount .divPriceAmount {
+  float: right;
+}
+.tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divCellPrice {
+  margin-top: 2em;
+}
+.tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divboxHorizontal {
+  display: flex;
+}
+.tableShopcart .trShopitem .tdPriceAmount .divPriceAmount .divboxHorizontal .divCellAmount {
+  margin: auto 5px;
+  /* margin: auto; */
+}
+
+#modalShopcart {
+  background-color: #06101b;
+}
+#modalShopcart .modal-content {
+  background-color: #0c2138;
+}
+
+.bottomBuy {
+  margin: 10px;
+  border: red 2px solid;
+  height: 40px;
+  background-color: coral;
+  position: fixed;
+  color: black;
+  bottom: -9px;
+  left: 0px;
+  right: 0px;
+}
+
+:local(.modal-dialog) {
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+:local(.modal-content) {
+  width: 100vw;
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}

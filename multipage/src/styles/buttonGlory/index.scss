@@ -1,0 +1,6 @@
+@use '../form.css';
+@use './buttonGlory1.scss';
+
+button{
+    @include buttonGlory1.getSigninButton(red,100%)
+}

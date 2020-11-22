@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #06101b;
+  color: white;
+}
+
+.b-displayNone {
+  display: none;
+}
+
+.b-textCenter {
+  text-align: center;
+}
+
+.b-flexStart {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.b-flexCenter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.b-ulStyleNone {
+  list-style-type: none;
+}
+
+.b-imgContainer, .boxViewOrders .boxTable .productBox .imgContainer {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.b-imgContainer img, .boxViewOrders .boxTable .productBox .imgContainer img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.b-btnGolden {
+  display: block;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  /*background-color: $colorGold;
+  */
+  color: #beac74;
+  border: #beac74 2px solid;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 20px;
+}
+.b-btnGolden:hover {
+  color: white;
+  background-color: #beac74;
+  transition-duration: 0.3s;
+  border-radius: 20px;
+}
+.b-btnGolden:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.boxViewOrders .boxCategoryButtons {
+  width: 100%;
+}
+.boxViewOrders .boxTable .table {
+  color: #e6e6e6;
+}
+.boxViewOrders .boxTable .table tr {
+  cursor: pointer;
+}
+.boxViewOrders .boxTable .productBox {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3px;
+}
+.boxViewOrders .boxTable .productBox div {
+  border: 1px solid yellow;
+}
+.boxViewOrders .boxTable .productBox .imgContainer {
+  width: 100px;
+  height: 100px;
+}
+.boxViewOrders .boxTable .boxProductName {
+  width: 200px;
+}
+.boxViewOrders .boxTable .boxProductUnitPrice {
+  width: 100px;
+}
+.boxViewOrders .boxTable .boxProductAmount {
+  width: 100px;
+}
+.boxViewOrders .boxTable .boxProductCountPrice {
+  width: 100px;
+}
+.boxViewOrders .parentExpandFoo {
+  background-color: #685b31;
+  transition-duration: 1s;
+}
+.boxViewOrders .row-expand-slide-appear {
+  max-height: 0;
+  overflow: hidden;
+}
+.boxViewOrders .row-expand-slide-appear-active {
+  max-height: 1000px;
+  transition: max-height 1s linear;
+  -webkit-transition: max-height 1s linear;
+  -moz-transition: max-height 1s linear;
+  -ms-transition: max-height 1s linear;
+  -o-transition: max-height 1s linear;
+}
+.boxViewOrders .row-expand-slide-exit {
+  max-height: 1000px;
+}
+.boxViewOrders .row-expand-slide-exit-active {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms cubic-bezier(0, 0.95, 0, 0.95);
+  -webkit-transition: max-height 400ms cubic-bezier(0, 0.95, 0, 0.95);
+  -moz-transition: max-height 400ms cubic-bezier(0, 0.95, 0, 0.95);
+  -ms-transition: max-height 400ms cubic-bezier(0, 0.95, 0, 0.95);
+  -o-transition: max-height 400ms cubic-bezier(0, 0.95, 0, 0.95);
+}
+.boxViewOrders .expandingRowBackground {
+  background-color: #0c2138;
+}
+
+/* * {
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+} */
+/* html,
+body {
+    width: 100%;
+    height: 100%;
+
+    font-family: sans-serif;
+
+    background: linear-gradient(135deg, #f28, #4ae);
+} */

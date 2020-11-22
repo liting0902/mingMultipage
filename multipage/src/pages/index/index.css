@@ -1,0 +1,214 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #06101b;
+  color: white;
+}
+
+.b-displayNone {
+  display: none;
+}
+
+.b-textCenter {
+  text-align: center;
+}
+
+.b-flexStart {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.b-flexCenter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.b-ulStyleNone {
+  list-style-type: none;
+}
+
+.b-imgContainer {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.b-imgContainer img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.b-btnGolden {
+  display: block;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  /*background-color: $colorGold;
+  */
+  color: #beac74;
+  border: #beac74 2px solid;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 20px;
+}
+.b-btnGolden:hover {
+  color: white;
+  background-color: #beac74;
+  transition-duration: 0.3s;
+  border-radius: 20px;
+}
+.b-btnGolden:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.fullPageScroll {
+  margin: -8px;
+  position: relative;
+  scroll-snap-type: mandatory y;
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+.fullPageScroll .section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: multiply;
+  scroll-snap-align: start;
+}
+.fullPageScroll .section:nth-child(1) {
+  background-image: url("spices.jpg");
+}
+.fullPageScroll .section:nth-child(2) {
+  background-image: url("99012.jpg");
+  background-position: top;
+}
+.fullPageScroll .section:nth-child(3) {
+  background-image: url("kitware.jpg");
+}
+.fullPageScroll .section:nth-child(4) {
+  background-image: url("_old_street.jpg");
+}
+.fullPageScroll .section:nth-child(n) {
+  background-size: cover;
+  background-attachment: fixed;
+}
+.fullPageScroll .section .content {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: black;
+  width: 50vw;
+  height: 25vh;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.575);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.fullPageScroll .section .content h2 {
+  font-size: 1.5rem;
+}
+.fullPageScroll .section .content p {
+  font-size: 1rem;
+  width: 50%;
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.navbar-custom {
+  background-color: #fbd915;
+}
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: green;
+}
+
+.BodySetting {
+  background-color: #06101b;
+  color: white;
+}
+
+/* .bgBlack {
+    background-color: black;
+} */
+.bd-primary {
+  border: 5px solid #3e5ff1;
+}
+
+.colorBlack {
+  color: black;
+}
+
+.displayNone {
+  display: none;
+}
+
+.numberBadge {
+  background-color: red;
+  color: white;
+  position: relative;
+  border-radius: 50%;
+  padding: 0.4em;
+  margin: 0px;
+  font-size: 50%;
+  line-height: 0.9em;
+  text-align: center;
+  /* display: inline-block; */
+  font-weight: bold;
+  /* content: attr(data-count); */
+  /* span width失效 */
+  /* min-width: 2em;
+  min-height: 2em; */
+}
+
+.nbg1 {
+  top: -1em;
+  left: -1.4em;
+}
+
+.nbg2 {
+  /* top: -4em;
+  left: 1em; */
+  top: -1em;
+  left: 1.4em;
+}
+
+/* .fa-stack{
+    width: 3em;
+    padding: 0px;
+    margin: 0px;
+} */
+/* .fa-shopping-cart[data-count]:after {
+    position: relative;
+    right: 6px;
+    top: -12px;
+    content: attr(data-count);
+    font-size: 50%;
+    padding: .5em;
+    border-radius: 50%;
+    line-height: .75em;
+    color: white;
+    background: rgba(255, 0, 0, .85);
+    text-align: center;
+    display: inline-block;
+    min-width: 2em;
+    min-height: 2em;
+    font-weight: bold;
+} */

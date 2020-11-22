@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap</title>
+    <!-- <link rel="stylesheet" href="cusModalLogin.css"> -->
+    <!-- ============ bootstrap ============ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.1/dist/bootstrap-float-label.min.css"> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <!-- ============ fontAwasome ============ -->
+    <link rel="stylesheet" href="../fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="../fontawesome/css/brands.min.css">
+
+    <link rel="stylesheet" href="./cusModalLogin.css">
+</head>
+
+<body>
+    <template>
+        <!-- Button trigger modal -->
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLogin">
+    Launch demo modal
+    </button> -->
+
+        <!-- Modal -->
+        <div class="modal modalLogin" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content modalBackground">
+                    <!-- ========HEADER======== -->
+                    <div class="modal-header">
+                        <h5 class="modal-title titleText" id="exampleModalLabel">
+                            <!-- <div>Modal title</div> -->
+                            <div>
+                                <input type="radio" class="radioSignin" name="headerSign" checked>
+                                <input type="radio" class="radioSignup" name="headerSign">
+                                <input type="radio" class="radioForgetPwd" name="headerSign">
+                                <!-- <input type="checkbox" class="ckboxHideLeftArrow" checked> -->
+                                <!-- <i class="fas fa-arrow-alt-circle-left leftArrow"></i> -->
+                                <span class="leftArrow"><i class="fas fa-arrow-alt-circle-left"></i></span>
+
+
+                                <!-- <label for="ckboxSignIn"><label for="iptTest">Sign In</label></label> -->
+                                <label class="labelSignin">登入</label>
+                                <label class="labelSignup">註冊新Email帳號</label>
+                                <label class="labelForgetPwd">忘記密碼</label>
+                                <div class="underline"></div>
+                            </div>
+
+                        </h5>
+                        <button type="button" class="close titleText" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- ========BODY======== -->
+                    <div class="modal-body">
+                        <input class="ckboxSignIn" type="radio" name="sign" checked>
+                        <input class="ckboxSignUp" type="radio" name="sign">
+                        <input class="ckboxForgetPwdHtm" type="radio" name="sign">
+                        <!-- <style>
+                            .signInHtm{
+                                background-color: rgba(255,0,0,0);
+                            }
+                        </style> -->
+                        <!-- ========= signInHtm ======== -->
+                        <form class="signInHtm titleText">
+
+                            <div class="form-group inputField1">
+                                <span>Email</span>
+                                <input type="email" placeholder="example@yourdomain.com" bindIptSigninEmail required autocomplete="email">
+                                <i class="fas fa-check-circle" style="color:lime;"></i>
+                            </div>
+
+                            <div class="form-group inputField1">
+                                <span>Password</span>
+                                <input type="password" placeholder="英文字母或數字，至少8位數" pattern="^[0-9a-zA-Z]{8,}$"
+                                    bindIptSigninPWD required autocomplete="current-password">
+                                <i class="fas fa-check-circle" style="color:lime;"></i>
+                            </div>
+
+                            <label class="ckboxKeepSignin">
+                                <input type="checkbox" name="remember" bindCkboxSigninKeepIn checked>持續保持登入
+                            </label>
+                            <!-- <div id="linkForgetPassword"><label for="ckboxForgetPwdHtm">Forget password?</label></div>
+                        <div id="linkSignupHtm"><label for="ckboxSignUp">註冊新帳號</label></div> -->
+
+                            <div class="divSignupHtm">註冊新Email帳號</div>
+                            <div class="divForgetPassword">忘記密碼?</div>
+
+                            <button class="btnEmailSignin">
+                                Email Sign In
+                            </button>
+                            <button type="button" class="btnGoogleSignin">
+                                Google Sign In
+                            </button>
+
+                            <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+                        </form>
+
+                        <!-- ========= signUpHtm ======== -->
+                        <form class="signUpHtm titleText">
+                            <div class="form-group inputField1">
+                                <span>Email</span>
+                                <input type="email" placeholder="example@yourdomain.com" bindIptRegisterEmail required autocomplete="email">
+                                <i class="fas fa-check-circle" style="color:lime;"></i>
+                            </div>
+                            <div class="form-group inputField1">
+                                <span>Password</span>
+                                <input type="password" placeholder="英文字母或數字，至少8位數" pattern="^[0-9a-zA-Z]{8,}$"
+                                    bindIptRegisterPWD1 required autocomplete="new-password">
+                                <i class="fas fa-check-circle" style="color:lime;"></i>
+                            </div>
+                            <div class="form-group inputField1">
+                                <span>Confirm Password</span>
+                                <input type="password" placeholder="英文字母或數字，至少8位數" pattern="^[0-9a-zA-Z]{8,}$"
+                                    bindIptRegisterPWD2 required autocomplete="new-password">
+                                <i class="fas fa-check-circle" style="color:lime;"></i>
+                            </div>
+                            <button class="form-group btnEmailSignin">
+                                開始註冊，發送認證Email到信箱
+                            </button>
+                        </form>
+                        <!-- ========= forgetPwdHtm ======== -->
+                        <form class="forgetPwdHtm titleText">
+                            <div class="form-group inputField1">
+                                <span>Email</span>
+                                <input type="email" placeholder="example@yourdomain.com" bindIptResentPwdEmail required autocomplete="email">
+                                <i class="fas fa-check-circle" style="color:lime;"></i>
+                            </div>
+                            <button class="form-group btnEmailSignin" btnResentPassword>
+                                重寄密碼
+                            </button>
+                        </form>
+                    </div>
+                    <div testArea></div>
+                    <div class="footerHeight"></div>
+                    <!-- ========FOOTER======== -->
+                    <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <script>
+
+    </script>
+
+    <script>
+        let template = document.querySelector('template')
+        let templateContent = template.content;
+        document.body.appendChild(templateContent)
+
+        let iptEmail = document.querySelector(".modal .signInHtm input[type='email']");
+
+
+        $('#modalLogin').on('shown.bs.modal', function () {
+            iptEmail.focus();
+        })
+        $('#modalLogin').modal('show')
+
+
+
+
+
+        let ckboxSignIn = document.querySelector('.modal-body .ckboxSignIn');
+        let ckboxSignUp = document.querySelector('.modal-body .ckboxSignUp');
+        let ckboxForgetPwdHtm = document.querySelector('.modal-body .ckboxForgetPwdHtm');
+
+        let radioSignin = document.querySelector('.modal-header .radioSignin');
+        let radioSignup = document.querySelector('.modal-header .radioSignup');
+        let radioForgetPwd = document.querySelector('.modal-header .radioForgetPwd');
+
+        // let ckboxHideLeftArrow = document.querySelector('.modal-header #ckboxHideLeftArrow');
+
+        let leftArrow = document.querySelector('.modal-header .leftArrow')
+        leftArrow.addEventListener('click', (e) => {
+            ckboxSignIn.checked = true;
+            radioSignin.checked = true;
+            // ckboxHideLeftArrow.checked  = true
+        })
+        let divSignupHtm = document.querySelector('.modal-body .divSignupHtm')
+        divSignupHtm.addEventListener('click', (e) => {
+            ckboxSignUp.checked = true;
+            radioSignup.checked = true;
+            // ckboxHideLeftArrow.checked  = false
+        })
+        let divForgetPassword = document.querySelector('.modal-body .divForgetPassword')
+        divForgetPassword.addEventListener('click', (e) => {
+            ckboxForgetPwdHtm.checked = true;
+            radioForgetPwd.checked = true;
+            // ckboxHideLeftArrow.checked  = false
+        })
+
+        // setTimeout(() => {
+        //     let iptEmail = document.querySelector(".modal .signInHtm input[type='email']");
+        //     // iptEmail.value='sfdasdfsa'
+        //     iptEmail.focus();
+        // }, 1000);
+    </script>
+
+
+</body>
+
+</html>

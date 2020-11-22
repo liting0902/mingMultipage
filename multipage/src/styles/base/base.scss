@@ -1,0 +1,106 @@
+// $fa-font-path:"./fontawesome/webfonts";
+// @import "fontawesome/scss/fontawesome.scss";
+// @import "fontawesome/scss/solid.scss";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+$colorRoyalBlue:rgb(6, 16, 27);
+$colorWhite:white;
+//$colorGold:gold;
+$colorGold:rgb(190, 172, 116);
+$colorGoogleRed:#db3236;
+$colorEmailIcon:lime;
+$colorTitle2:white;
+
+$navbarHeight:5rem;
+html,
+body {
+    background-color: $colorRoyalBlue;
+    color: white;
+}
+
+.b-displayNone{
+    display: none;
+}
+.b-textCenter {
+    text-align: center;
+}
+
+.b-flexStart {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+.b-flexCenter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.b-ulStyleNone {
+    list-style-type: none;
+}
+.b-imgContainer {
+    //@extend .bd2;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //position: relative;
+    margin: auto; // go center
+
+    img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+.b-btnGolden {
+    // margin: 15px;
+    display: block;
+    //width: 100px;
+    // line-height: 2rem;
+    text-align: center;
+    background-color: transparent;
+    cursor: pointer;
+    /*background-color: $colorGold;
+    */
+    color: $colorGold;
+    border: $colorGold 2px solid;
+    font-weight: bold;
+    font-size: 1.2em;
+
+    border-radius: 20px;
+
+    &:hover {
+        color: $colorWhite;
+        background-color: $colorGold;
+
+        transition-duration: .3s;
+        border-radius: 20px;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+// .bd1 {
+//     border: red 2px solid;
+// }
+// .bd2 {
+//     border: rgb(248, 244, 7) 2px solid;
+// }
+// .bd3 {
+//     border: rgb(7, 111, 248) 2px solid;
+// }
+// .bd4 {
+//     border: rgb(7, 248, 119) 2px solid;
+// }

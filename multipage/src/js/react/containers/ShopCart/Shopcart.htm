@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CategoryCard</title>
+    <link rel="stylesheet" href="ShopCart.css">
+    <style>
+        html,
+        body {
+            background-color: black;
+            /* background-color: var(--clrDarkBlueBg); */
+            color: white;
+        }
+
+        .flexCenter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 5px;
+        }
+
+        .flexStart {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin: 5px;
+        }
+
+        .ulStyle {
+            list-style-type: none;
+        }
+
+        .headerTitle {
+            font-size: 2em;
+            font-weight: bold;
+            height: 2em;
+            border-bottom: white solid 3px;
+            text-align: center;
+            color: var(--clrGolden);
+        }
+
+        .textContent1 {
+            color: var(--clrGolden);
+        }
+
+        .card {
+            width: 270px;
+            height: 200px;
+            margin: 5px;
+            text-align: center;
+        }
+
+
+        .imgFood {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .hrDot {
+            border: 1px dashed white;
+        }
+
+        .descText {
+            color: var(--clrGolden);
+        }
+
+        /* .filterButtons{
+            height: 100px;
+        } */
+        /* .categoryTitle{
+            color: var(--clrGolden);
+        } */
+
+        .sec1,
+        .sec2 {
+            width: 80%;
+        }
+
+        .bdGolden {
+            border: var(--clrGolden) 2px solid;
+            color: var(--clrTitleText);
+        }
+        .boxShopTable{
+            padding: 2em;
+        }
+        .bd1,
+        .bd2,
+        .bd3,
+        .bd4 {
+            border-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bdGolden boxShopTable">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consectetur nobis inventore quos obcaecati
+            doloremque, perspiciatis temporibus explicabo autem natus. Voluptate tempora ipsam eum, fuga reprehenderit
+            veniam sint impedit ad.</p>
+        <style>
+            .tableShopcart {
+                /* display: inline-flex; */
+                width: 100%;
+                /* padding: .4em; */
+                border-collapse: collapse;
+                /* border-collapse: separate;
+                border-spacing: 15px; */
+                font-size: 1.5em;
+
+            }
+
+            .tdPriceAmount {
+                text-align: right;
+                /* margin: auto 0 auto auto; */
+            }
+
+            .divPriceAmount {
+                float: right;
+            }
+
+            .trShop {
+                /* display: block; */
+                border-bottom: var(--clrGolden) 4px solid;
+            }
+
+            /* .trShop td {
+                border-bottom: 3px solid red;
+            } */
+
+            .divCellPrice {
+
+                margin-top: 2em;
+            }
+
+            /* .inDivCenter{
+                margin: auto;
+            } */
+            .divCellAmount {
+                margin: auto 5px;
+                /* margin: auto; */
+            }
+
+            .divboxHorizontal {
+                display: flex;
+
+            }
+
+            .btnAdd {
+                /* display: inline-flex;
+                align-items: flex-end; */
+                /* line-height: 5em; */
+                cursor: pointer;
+                /* text-decoration:none; */
+                /* display: block; */
+                /* padding: 0; */
+
+                display: inline-flex;
+                justify-content: center;
+                /* center the content horizontally */
+                align-items: center;
+                /* center the content vertically */
+                /* --padding-x: 1.2em; */
+                /* border-color: transparent; */
+
+            }
+        </style>
+        <table id="tbShopcart" class="bd1 tableShopcart">
+            <tr class="bd2 trShop">
+                <td class="bd3">鍋燒烏龍麵</td>
+                <td class="bd3 tdPriceAmount">
+                    <div class="divPriceAmount">
+                        <div class="bd2 divCellPrice">NT$ 300</div>
+                        <div class="bd4 divboxHorizontal">
+                            <button class="btnAdd">
+                                <div>-</div>
+                            </button>
+                            <div class="divCellAmount">33333</div>
+                            <button class="btnAdd">+</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <!-- <div class="dsTable bd1">
+            <div class="dsRow bd2">
+                <div class="dsCell bd3">
+                    <div class="cell">AAAA</div>
+                </div>
+                <div class="dsCell bd3">
+                    <div class="cell">AAAA</div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="bd3 flexCenter">
+        <section class="sec2">
+            <ul id="ulCategory" class="flexStart ulStyle">
+            </ul>
+        </section>
+        <section class="bd4 sec1">
+            <header class="headerTitle">牛肉</header>
+            <p class="textContent1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sapiente explicabo
+                commodi maiores iure deserunt, debitis necessitatibus minima! Impedit ipsam eius dolore cum excepturi
+                eos
+                ipsa quia quisquam facere et?</p>
+            <ul id="ulCards" class="bd2 ulStyle flexStart">
+
+            </ul>
+        </section>
+
+    </div>
+
+    <template>
+        <li id="categoryCard" class="btnGoldenRadius">
+            <div>牛肉</div>
+        </li>
+        <li id="foodCard" class="bd1 food">
+            <div>百頁豆腐</div>
+            <img class="imgFood" src="noodle1.png" alt="">
+            <div>NT$ 20</div>
+            <hr class="hrDot">
+        </li>
+    </template>
+    <script>
+        let comp1 = document.querySelector('template')
+        //-----------Category
+        let ulCategory = document.querySelector('#ulCategory')
+        for (let i = 0; i < 3; i++) {
+            let elemLI = comp1.content.querySelector('#categoryCard').cloneNode(true);
+            ulCategory.appendChild(elemLI)
+        }
+        //-----------Food
+        let ulCards = document.querySelector('#ulCards')
+        for (let i = 0; i < 9; i++) {
+            let elemLI = comp1.content.querySelector('#foodCard').cloneNode(true);
+            ulCards.appendChild(elemLI)
+        }
+        //-----------Shopcart
+        let tbShopcart = document.querySelector('#tbShopcart') //.cloneNode(true);
+        let elemLI = comp1.content //.querySelector('#tr1');
+        let node1 = tbShopcart.rows[0].cloneNode(true)
+        tbShopcart.appendChild(node1)
+        for (let i = 0; i < 3; i++) {
+            node1 = tbShopcart.rows[0].cloneNode(true)
+            tbShopcart.appendChild(node1)
+        }
+
+        console.log(node1)
+        //console.log(elemLI)
+        // let clone = document.importNode(comp1.content, true)
+        // console.log(clone)
+        // tbShopcart.appendChild(clone)
+        //         for (let i = 0; i < 4; i++) {
+        //             let elemLI = comp1.content//.querySelector('#trShopitem')
+        //             //console.log(elemLI)
+        //             let clone = document.importNode(comp1.content, true);
+        //             console.log(clone)
+        //   //tb.appendChild(clone);    
+        //             // console.log(elemLI)//.cloneNode(true);
+        //             // tbShopcart.appendChild(elemLI)
+        //         }
+    </script>
+</body>
+
+</html>

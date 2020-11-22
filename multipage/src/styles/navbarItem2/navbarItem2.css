@@ -1,0 +1,36 @@
+.navbarItem1 {
+  width: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 40px;
+}
+.navbarItem1 label {
+  border: 2px solid red;
+  min-width: 70px;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+  font-weight: bolder;
+  padding: 8px 0;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: 3px;
+}
+.navbarItem1 label:hover {
+  color: black;
+}
+.navbarItem1 label.contact {
+  min-width: 90px;
+}
+.navbarItem1 div {
+  width: 70px;
+  height: 4px;
+  background: blue;
+  position: absolute;
+  bottom: 0;
+  transition: 0.3s;
+  left: 0px;
+}

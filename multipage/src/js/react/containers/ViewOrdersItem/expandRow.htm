@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            background-color: black;
+            color: white;
+            font-size: 18px;
+        }
+
+        div {
+            border: 1px solid green;
+            margin: 8px;
+        }
+
+        img {
+            max-height: 100px;
+            max-width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <p>訂單編號: {202009010003}</p>
+        </div>
+        <div>
+            <p>總價格: {860}</p>
+        </div>
+        <div>
+            <label>總價格:</label>
+            <span>{860}</span>
+        </div>
+        <style>
+            .container2 {
+                display: flex;
+                /* width: 400px; */
+                border: 1px solid yellow;
+                flex-wrap:wrap;
+            }
+            .box1{
+                border: 1px solid red;
+                width: 100px;
+                height: 100px;
+            }
+            .prodName{
+                width: 100px;
+            }
+        </style>
+        
+        <div class="container2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/ming1-d8ff5.appspot.com/o/Products%2F1mmn9i3r-0008.jpg?alt=media&token=51eeae00-54aa-4382-9a35-c350de903ddf"
+                alt="">
+            <div class="prodName">酒釀嫩牛豆腐花</div>
+            <div>單價: 190</div>
+            <div>數量: 2</div>
+            <div>金額: 280</div>
+        </div>
+        <div class="container2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/ming1-d8ff5.appspot.com/o/Products%2F1mmn9i3r-0008.jpg?alt=media&token=51eeae00-54aa-4382-9a35-c350de903ddf"
+                alt="">
+            <div class="prodName">XX</div>
+            <div>單價: 190</div>
+            <div>數量: 2</div>
+            <div>金額: 280</div>
+        </div>
+        <div class="container2">
+            <img src="https://firebasestorage.googleapis.com/v0/b/ming1-d8ff5.appspot.com/o/Products%2F1mmn9i3r-0008.jpg?alt=media&token=51eeae00-54aa-4382-9a35-c350de903ddf"
+                alt="">
+            <div class="prodName">酒釀嫩牛豆腐花酒釀嫩牛豆腐花</div>
+            <div>單價: 190</div>
+            <div>數量: 2</div>
+            <div>金額: 280</div>
+        </div>
+
+        <div class="container2">
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+{
+    "userId": "HEHLT5DAdHT0eqLVA3DZDX4Erpr1",
+    "createDateTime": "2020-10-09T14:35:40.392Z",
+    "orderId": "202010090008",
+    "shopItemList": [
+        {
+            "_productInfo": {
+                "productId": "0016-dit",
+                "name": "海帶",
+                "price": 10,
+                "addDateTime": {
+                    "seconds": 1602252983,
+                    "nanoseconds": 985000000
+                },
+                "category": "others",
+                "tag": "#",
+                "imgUrl": "null",
+                "imgFileName": "null",
+                "autoNum": 16,
+                "isActived": false
+            },
+            "productId": "0016-dit",
+            "amount": 3,
+            "price": 10
+        },
+        {
+            "_productInfo": {
+                "productId": "0013-zoe",
+                "name": "牛肚",
+                "price": 150,
+                "addDateTime": {
+                    "seconds": 1602252983,
+                    "nanoseconds": 574000000
+                },
+                "category": "beef",
+                "tag": "#",
+                "imgUrl": "null",
+                "imgFileName": "null",
+                "autoNum": 13,
+                "isActived": false
+            },
+            "productId": "0013-zoe",
+            "amount": 1,
+            "price": 150
+        },
+        {
+            "_productInfo": {
+                "productId": "0015-kwa",
+                "name": "滷蛋",
+                "price": 10,
+                "addDateTime": {
+                    "seconds": 1602252983,
+                    "nanoseconds": 839000000
+                },
+                "category": "others",
+                "tag": "#",
+                "imgUrl": "null",
+                "imgFileName": "null",
+                "autoNum": 15,
+                "isActived": false
+            },
+            "productId": "0015-kwa",
+            "amount": 4,
+            "price": 10
+        }
+    ],
+    "totalPrice": 220,
+    "orderStatus": {
+        "isPaid": false,
+        "isCanceled": false,
+        "isDelivery": false,
+        "isCompleted": false
+    },
+    "orderLog": [],
+    "userProfile": {
+        "phoneNumber": "........",
+        "selectAddress": 2,
+        "name": "AAAA",
+        "address3": "",
+        "address1": "台北市和平東路15號",
+        "address2": "AA",
+        "sendEmail": "AAAA"
+    }
+}

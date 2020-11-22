@@ -1,0 +1,9 @@
+@use 'switchButton';
+
+$labelHeight : 30px;
+$labelMargin : 3px;
+$sliderColor:lime;
+
+.switchButton {
+    @include switchButton.getClass($labelHeight, $labelMargin, $sliderColor)
+}

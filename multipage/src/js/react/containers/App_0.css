@@ -1,0 +1,50 @@
+html,body{
+    background-color: blue;
+}
+#divMainContainer {
+    border: 2px yellow solid;
+    padding: 10px;
+}
+
+.SearchBarContainer {
+    border: 2px orchid solid;
+    margin: 10px;
+}
+
+.CategoryContainer {
+    border: 2px orange solid;
+    margin: 10px;
+}
+
+#navHeader {
+    border: 2px green solid;
+    margin: 10px;
+    display: flex;
+}
+
+#divRightContainer {
+    border: 2px rgb(25, 219, 138) solid;
+    margin: 10px;
+}
+
+#container-main {
+    border: 2px rgb(241, 58, 12) solid;
+    margin: 10px;
+    display: flex;
+}
+
+#container-article {
+    border: 2px rgb(68, 186, 216) solid;
+    margin: 10px;
+    /* flex-grow: 3;
+    flex-shrink: 1; */
+    flex-basis: 150%;
+
+
+}
+
+#container-aside {
+    border: 2px rgb(25, 219, 138) solid;
+    margin: 10px;
+
+}

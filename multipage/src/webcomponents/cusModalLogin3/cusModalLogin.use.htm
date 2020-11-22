@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ============ firebase ============ -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+    <!-- ============ bootstrap ============ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <!-- ============ fontAwasome ============ -->
+    <link rel="stylesheet" href="../../styles/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../styles/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="../../styles/fontawesome/css/brands.min.css">
+    <!-- ============ sweetAlert2 ============ -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- <link rel="stylesheet" href="../../template/style.css"> -->
+    <link rel="stylesheet" href="./cusModalLogin.css">
+    <style>
+        html,
+        body {
+            background-color: var(--clrDarkBlueBg);
+            color: white;
+        }
+
+        .colorBlack {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="testArea" style="border: orange 4px solid;">
+        <button type="button" id="btnTEST">TEST</button>
+        <button type="button" id="btnLogout">Logout</button>
+    </div>
+
+
+    <script type="module">
+        import cusModalLogin from './cusModalLogin.js'
+        import firebaseConfig from '../firebaseConfig.js'
+        import {useComponent} from '../../js/others/useComponent3.js'
+        import {Email_ResendPassword} from '../../js/firebase/Firebase.js'
+        //import Swal from '../../../../node_modules/sweetalert2/dist/sweetalert2.js'
+        // var firebaseConfig = {
+        //     apiKey: "AIzaSyD4H_AArvgvLf7HEmFBdHS6iUQcG3CTUOM",
+        //     authDomain: "ming1-d8ff5.firebaseapp.com",
+        //     databaseURL: "https://ming1-d8ff5.firebaseio.com",
+        //     projectId: "ming1-d8ff5",
+        //     storageBucket: "ming1-d8ff5.appspot.com",
+        //     messagingSenderId: "504139528822",
+        //     appId: "1:504139528822:web:078db71d75c01af93bfd57",
+        //     measurementId: "G-ENYG95C00T"
+        // };
+        
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                console.log('new login === ', {
+                    dispalyName: user.dispalyName,
+                    email: user.email,
+                    emailVerified:user.emailVerified,
+                    phoneNumber: user.phoneNumber,
+                    photoURL: user.photoURL,
+                    uid: user.uid,
+                })
+            } else {
+                // No user is signed in.
+                console.log('No user is signed in.')
+            }
+        });
+        window.firebase = firebase
+        let testArea = document.querySelector('#testArea');
+        let newTagName = "cus-modal-login";
+        let btnTEST = document.querySelector('#btnTEST');
+        
+        useComponent(newTagName, './cusModalLogin.htm',cusModalLogin)
+            .then((htmlFile) => {
+    
+                let plugins = {
+                    Swal,
+                    Email_ResendPassword,
+                }
+                
+                //class-instance APPEAR!!  you can set template now~~~
+                let newComponent = new htmlFile.ctor(htmlFile.templateContent,plugins);
+                document.body.appendChild(newComponent)
+                //newComponent.setAuth_getRedirectResult();
+                // newComponent.setDataDefine({
+                //     UserProfile: UserProfile
+                // });
+                // let uid = testData.userId;
+                
+                //======= tsetArea =======
+                newComponent.appendTestArea(testArea)
+
+                // this.btnTEST = document.querySelector('#btnTEST');
+                btnTEST.addEventListener('click', (e) => {
+                    // newComponent.proxyUI.bindIptSigninEmail = 'AAAAA'
+                    // console.log(newComponent.proxyUI.bindIptSigninEmail)
+
+                    // //newComponent.proxyUI.bindCkboxSigninKeepIn = true
+                    // console.log(newComponent.proxyUI.bindCkboxSigninKeepIn)
+
+                    
+                })
+                
+                let btnLogout = document.querySelector('#btnLogout');
+                btnLogout.addEventListener('click',(e) => {
+                    firebase.auth().signOut().then(function () {
+                        // Sign-out successful.
+                    }).catch(function (error) {
+                        // An error happened.
+                    });
+                });
+
+                newComponent.showModal(true)
+                newComponent.proxyUI.bindIptSigninEmail = 'ice4kimo@yahoo.com.tw'
+                newComponent.proxyUI.bindIptSigninPWD = 'qwer1111'
+                
+            })
+                
+    </script>
+
+
+</body>
+
+</html>

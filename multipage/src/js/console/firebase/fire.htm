@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-storage.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script>
+    <style>
+        html {
+            background-color: black;
+            color: white;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+        .img1{
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <img id="img1" class="img1" alt="img1">
+    <script src="https://wzrd.in/standalone/mime@latest"></script>
+    <button id="btnUpload">upload file</button>
+    <button id="btnDownload">download file</button>
+    <button id="btnAddDB">add db</button>
+    <button id="btnSetDB">set db</button>
+    <button id="btnBatchAutoId">Batch Auto Id</button>
+    <button id="btnAutoIncrement">Auto Increment</button>
+    <button id="btnaddProduct3">add Product 3</button>
+    <button id="btn_setProducts_And_autoNum">_setProducts_And_autoNum</button>
+    <br/>
+    <button id="btnaddProduct4">add Product 4</button>
+    <button id="btn_setProduct_db_merge">_setProduct_db_merge</button>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mime-types@2.1.27/index.js" integrity="sha256-jPzKrDBr62UNYMfwaa4PSznWSPHjkUaWsYwTOrM+ZBk=" crossorigin="anonymous"></script> -->
+    <script type="module">
+        import Firebase_mjs, {FIRESTORAGE_FOLDERS} from './Firebase.js'
+        // import firebaseConfig from '../../../src/lib/firebaseConfig.mjs'
+        // firebase.initializeApp(firebaseConfig);
+        // firebase.analytics();
+        // let FirebaseMJS = new Firebase_mjs(firebase);
+
+
+        // import {getType} from 'https://wzrd.in/standalone/mime@latest'
+        // console.log(mime.getType('jpg'))
+        // console.log(mime.getType('png'))
+        //console.log(mime.getExtension('image/png'))
+        
+        let img1 = document.querySelector('#img1');
+        var TempBlob=null;
+        fetch('./11.jpg')
+            .then((e) => {
+                //console.log(e.blob())
+                return e.blob();
+            })
+            .then((blob) => {
+                //console.log(e)
+                //Firebase.uploadFile(blob, 'MenuImages/12.jpg');
+                TempBlob = blob;
+                console.log(blob.type);
+                console.log('TempBlob fetched OK!')
+                let url = URL.createObjectURL(blob);
+                console.log(url)
+                img1.src = url
+                //console.log(MimeType.jpeg)
+                //console.log(MimeTypeArray())
+                
+                //Firebase.uploadFile_progress(blob, 'MenuImages/12.jpg');
+            })
+            .catch((err) => {
+                console.log(err)
+                
+            })
+        // let div1 = document.querySelector("#div1")
+        // div1.innerHTML = 'dfasdfsd'
+        
+        var firebaseConfig = {
+            apiKey: "AIzaSyD4H_AArvgvLf7HEmFBdHS6iUQcG3CTUOM",
+            authDomain: "ming1-d8ff5.firebaseapp.com",
+            databaseURL: "https://ming1-d8ff5.firebaseio.com",
+            projectId: "ming1-d8ff5",
+            storageBucket: "ming1-d8ff5.appspot.com",
+            messagingSenderId: "504139528822",
+            appId: "1:504139528822:web:078db71d75c01af93bfd57",
+            measurementId: "G-ENYG95C00T"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        let Firebase = new Firebase_mjs(firebase, firebaseConfig);
+        let btnAddDB = document.querySelector('#btnAddDB');
+        
+        
+        btnAddDB.addEventListener('click',(e) => {
+            //Firebase._addProduct_db( '青椒牛', 50 );
+            Firebase.addProduct( '青椒牛', 50,TempBlob );
+        })
+        let btnSetDB = document.querySelector('#btnSetDB')
+        btnSetDB.addEventListener('click',(e) => {
+            Firebase._setProduct_db('Gq913aimVeh3E7mzjMOV', '青椒牛222', 50000 );
+        });
+        
+        let btnUpload = document.querySelector('#btnUpload');
+        btnUpload.addEventListener('click',(e) => {
+            //console.log(Firebase.firebase.auth().settings)
+            fetch('./11.jpg')
+            .then((e) => {
+                //console.log(e.blob())
+                return e.blob();
+            })
+            .then((blob) => {
+                //console.log(e)
+                return Firebase.uploadFile(blob, 'MenuImages/12.jpg')
+                // .then((url) => {
+                //     console.log('new url1234----------below')
+                //     console.log(url)
+                // })
+                //Firebase.uploadFile_progress(blob, 'MenuImages/12.jpg');
+            })
+            .then((url) => {
+                console.log('new url1234----------below')
+                console.log(url)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        });
+        
+        let btnDownload = document.querySelector('#btnDownload');
+        //let img1 = document.querySelector('#img1');
+        btnDownload.addEventListener('click',(e) => {
+            Firebase.downloadFile('MenuImages/12.jpg',(url) => {
+                img1.src=url;
+            });
+        })
+
+        let btnBatchAutoId = document.querySelector('#btnBatchAutoId');
+        btnBatchAutoId.addEventListener('click',(e) => {
+            Firebase.batch_auto_get_id();
+        })
+        
+        let btnAutoIncrement = document.querySelector('#btnAutoIncrement');
+        btnAutoIncrement.addEventListener('click',(e) => {
+            Firebase.autoIncrementNum();
+        });
+
+        let btnaddProduct3 = document.querySelector('#btnaddProduct3');
+        btnaddProduct3.addEventListener('click',(e) => {
+            let prodInfo = Firebase.productInfo
+            Firebase.addProduct3('白斬雞',150, TempBlob);
+        });
+        
+        let btn_setProducts_And_autoNum = document.querySelector('#btn_setProducts_And_autoNum');
+        btn_setProducts_And_autoNum.addEventListener('click',(e) => {
+            Firebase._setProducts_And_autoNum('白斬雞',150,'http://ssdfs.dfsdf','dsfds.jpg');
+        });
+
+        let btnaddProduct4 = document.querySelector('#btnaddProduct4');
+        btnaddProduct4.addEventListener('click',(e) => {
+            Firebase.addProduct4('白斬雞',150, TempBlob)
+            .then((e) => {
+                console.log(e)
+            })
+            .catch((err) => {
+                console.log(err)
+            });
+        });
+
+        let btn_setProduct_db_merge = document.querySelector('#btn_setProduct_db_merge');
+        btn_setProduct_db_merge.addEventListener('click',(e) => {
+            Firebase._setProduct_db_merge('rrbfgpug-0005',{
+                category:'BBB'
+            })
+            .then((e) => {
+                console.log('eee--' ,e)
+            }
+            )
+            .catch((err) => {
+                console.log(err)
+            }
+            )
+        })
+    </script>
+    <script>
+        //console.log(Firebase)
+    </script>
+</body>
+
+</html>

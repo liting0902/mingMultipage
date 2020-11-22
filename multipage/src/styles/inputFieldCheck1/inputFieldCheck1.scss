@@ -1,0 +1,66 @@
+
+@use '../inputField1/inputField1.scss';
+
+$iptFontSize:14px;
+$spanFontSize:12px;
+$iptSpanGap:7px;
+
+.inputField1 {
+    // display: flex;
+    // align-items: center;
+    padding: .3rem;
+    span {
+        text-transform: uppercase;
+        font-size: $spanFontSize;
+         //12px:;
+        opacity: 0.4;
+        display: inline;
+        //vertical-align:middle;
+        //display: table-cell;
+        vertical-align:middle;
+        position: relative;
+        //top: $iptSpanGap;
+         //7px:;
+        transition: all 0.5s ease-in-out;
+        margin-left: 20px;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+}
+
+    input {
+        display: inline;
+        //padding-top: 20px;
+        font-size: $iptFontSize;
+        //14px:;
+        color: #fff;
+        border: none;
+        width: 100%;
+        padding: 20px 10px;
+        // display: block;
+        height: 15px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0);
+        overflow: hidden;
+        //margin-top: 15px;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+
+        &:focus {
+            outline: 0;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0);
+            color: #fff;
+        }
+
+        &:focus+span {
+            opacity: 0.6;
+        }
+    }
+}

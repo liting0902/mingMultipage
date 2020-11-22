@@ -1,0 +1,317 @@
+/* bootstrapLogin.scss */
+// @use '../../styles/inputField1/inputField1.scss';
+// @use '../../styles/buttonSignin/buttonSignin.scss';
+// @use '../../styles/variables.scss';
+@use '../../styles/base/base.scss';
+@use '../../styles/inputField1/inputField1.scss';
+@use '../../styles/buttonGlory/buttonGlory1.scss';
+//@use '../../styles/buttonGlory/buttonGlory1.scss';
+// button{
+//     @include buttonGlory1.getSigninButton(red,100%)
+// }
+*{
+    box-sizing: border-box;
+}
+$colorRoyalBlue:base.$colorRoyalBlue; //rgb(6, 16, 27);
+$colorWhite:base.$colorWhite; //white;
+//$colorGold:gold;
+$colorGold:base.$colorGold; //rgb(190, 172, 116);
+
+$borderRadius:15px;
+// :root {
+//     --clrGolden: rgb(190, 172, 116);
+//     --clrLine1: rgb(255, 255, 255);
+//     --clrTitleText: rgb(255, 255, 255);
+//     --clrHintText: rgb(127, 115, 78);
+//     --clrDarkBlueBg: rgb(6, 16, 27);
+//     --clrDarkBackground: rgb(30, 30, 30);
+//     --clr1: rgb(62, 62, 62);
+//     --clr2: rgb(171, 171, 171);
+
+//     --bg2: #003C4E;
+//     --bg3: #006D73;
+//     --bg4: #17A080;
+// }
+.formModifyPassword .inputCheckValid{
+    @include inputField1.inputCheckValid(1.4rem, lime, 1.4);
+}
+.boxUserProfile {
+
+    // $colorGoogleRed:#db3236;
+    // $colorEmailIcon:lime;
+    .emailColor {
+        color: base.$colorEmailIcon;
+    }
+
+    .googleColor {
+        color: base.$colorGoogleRed;
+    }
+
+    .titleWhite {
+        color: base.$colorTitle2;
+    }
+
+    .cancelHover {
+        &:hover {
+            color: base.$colorTitle2;
+        }
+    }
+
+    // .modal, .modal-content,.modal-dialog{
+    //     transition: all .4s linear;
+    // }
+
+    // $clrGolden: rgb(190, 172, 116);
+    // $clrLine1: rgb(255, 255, 255);
+    // $clrTitleText: rgb(255, 255, 255);
+    // $clrHintText: rgb(127, 115, 78);
+    // $clrDarkBlueBg: rgb(6, 16, 27);
+    // $clrDarkBackground: rgb(30, 30, 30);
+    // $clr1: rgb(62, 62, 62);
+    // $clr2: rgb(171, 171, 171);
+
+    //Saturate & Desaturate 飽和度
+    //hue($color) = 17.48031deg 取得顏色在色相環的位置
+    //adjust-hue($color, $degrees) 調整色相環位置。
+    //lightness($color)= 69.21569% 取得顏色的目前明度值
+    //grayscale($color)= #b1b1b1 將顏色調整為灰階
+    //complement($color)= #71cbf0 Complement 互補色
+    //complement($color)= #0f698e Invert
+    $bg1:$colorRoyalBlue;
+    $bg2: lighten($bg1, 20%);
+    $bg3: darken($bg1, 10%);
+    $bg4: #17A080;
+    $clrTitleText:white;
+
+    $modalBackground:$bg2;
+
+    .modalBackground,
+    .modal-header,
+    .modal-body,
+    .modal-footer,
+    .footerHeight {
+        background-color: $modalBackground;
+    }
+
+    .footerHeight {
+        height: 10px;
+    }
+
+    .titleText {
+        color: $clrTitleText;
+    }
+
+
+
+    // .modal-content{
+    //     //transition: all 2s;
+    //     transition: height 0.3s cubic-bezier(.25,.8,.25,1);
+    //     -webkit-transition: all 2s;
+    //     -moz-transition: all 2s;
+    //     -ms-transition: all 2s;
+    //     -o-transition: all 2s;
+    // }
+    [name=sign] {
+        // visibility: hidden;
+        display: none;
+    }
+
+    //hide pages
+    .signInHtm,
+    .signUpHtm,
+    .forgetPwdHtm {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        transition: all .4s linear;
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        -webkit-transition: all .4s linear;
+        -moz-transition: all .4s linear;
+        -ms-transition: all .4s linear;
+        -o-transition: all .4s linear;
+    }
+
+
+    .modal-header {
+        .leftArrow {
+            cursor: pointer;
+        }
+
+        input[name='headerSign'] {
+            display: none;
+        }
+
+        // .radioSignup,
+        // .radioForgetPwd,
+        // .labelSignin,
+        // .labelSignup, 
+        // .labelForgetPwd, 
+        // .leftArrow{
+        //     display: none;
+        // }
+        & .radioSignin:checked {
+
+            &~.leftArrow,
+            &~.labelSignup,
+            &~.labelForgetPwd {
+                display: none;
+            }
+        }
+
+        & .radioSignup:checked {
+
+            // &~.leftArrow,
+            &~.labelSignin,
+            &~.labelForgetPwd {
+                display: none;
+            }
+        }
+
+        & .radioForgetPwd:checked {
+
+            // &~.leftArrow,
+            &~.labelSignin,
+            &~.labelSignup {
+                display: none;
+            }
+        }
+    }
+
+    // .leftArrow{
+    //     display: none;
+    // }
+    // .iptTest:checked~.leftArrow {
+    //     display: none;
+    // }
+    //inputField1
+    //fa-exclamation-triangle
+    .modal-body {
+        .uiCkbox-emailVerified{
+            &:checked ~ .inputField1 .emailWarning,
+            &:checked ~ .emailWarning
+            {
+                display: none;
+            }
+        }
+        .uiCkbox-isAccountOfGoogle{
+            &:checked ~ #btnResendPassword
+            {
+                display: none;
+            }
+        }
+        .inputField1 input {
+            width: 50%;
+        }
+
+        .inputField1 input:invalid {
+
+            // background-color: red;
+            &:invalid+.fa-check-circle {
+                display: none;
+            }
+        }
+
+        .divMessageFailed {
+            border: red 2px solid;
+            text-align: center;
+            padding: .4rem;
+            color: $colorWhite;
+            border-radius: $borderRadius;
+        }
+
+        .divVerifyCode {
+            .width30{
+                width:30%;
+            }
+            border: 2px solid $colorGold;
+            border-radius: $borderRadius;
+            -webkit-border-radius: $borderRadius;
+            -moz-border-radius: $borderRadius;
+            -ms-border-radius: $borderRadius;
+            -o-border-radius: $borderRadius;
+        }
+        .fa-exclamation-triangle{
+            color: yellow;
+        }
+        // & .inputField1 input:invalid+i{
+        //     display: none;
+        //     visibility: hidden;
+        // }
+    }
+
+    // @mixin getSigninButton($color) {
+    //     //background-color: #d3d3d3;
+    //     font-family: 'Montserrat', sans-serif;
+    //     //color: #fff;
+    //     font-size: 14px;
+    //     letter-spacing: 1px;
+    //     background-color: $color;
+    //     //#1161ed:;
+    //     color: #FFF;
+    //     width: 90%;
+    //     padding: 10px 20px;
+    //     display: block;
+    //     height: 39px;
+    //     border-radius: 20px;
+    //     margin-top: 30px;
+    //     transition: all 0.3s ease-in-out;
+    //     border: none;
+    //     text-transform: uppercase;
+
+    //     &:hover {
+    //         background: lighten($color: $color, $amount: 10%); //#4082f5;
+    //         box-shadow: 0px 4px 35px -5px lighten($color: $color, $amount: 10%); //#4082f5;
+    //         cursor: pointer;
+    //         //transition: all 0.3s ease-in-out;    
+    //     }
+
+    //     &:focus {
+    //         outline: none;
+    //     }
+    // }
+
+    // button{
+    //     @include buttonGlory1.getSigninButton(red,100%)
+    // }
+
+    // $colorRoyalBlue:base.$colorRoyalBlue;//rgb(6, 16, 27);
+    // $colorWhite:base.$colorWhite;//white;
+    // //$colorGold:gold;
+    // $colorGold:base.$colorGold;//rgb(190, 172, 116);
+    .btnSave {
+        @include buttonGlory1.getSigninButton(lighten($colorRoyalBlue, 50%), 100%);
+        margin: 1.5rem 0;
+    }
+
+    .btnLighten {
+        @include buttonGlory1.getSigninButton(lighten($colorRoyalBlue, 50%), 100%);
+        width: auto;
+        display: inline;
+        //display: inline-block;
+        //display: inline-block;
+        //@includebuttonSignin.getSigninButton(#4082f5,30%)
+        // background-color: #4082f5;
+        // color: white;
+        // border-radius: 10px;
+        // //:hover;
+        // -webkit-border-radius: 10px;
+        // -moz-border-radius: 10px;
+        // -ms-border-radius: 10px;
+        // -o-border-radius: 10px;
+        //:;
+    }
+
+    // $googleColor:#db3236;
+
+    // .btnGoogleSignin {
+    //     @include getSigninButton($googleColor)
+    // }
+
+}

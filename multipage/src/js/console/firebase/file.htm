@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: black;
+            color: white;
+        }
+
+        .drag {
+            border: chartreuse 3px solid;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <input type="file" id="file-uploader" data-target="file-uploader" accept="image/*" multiple="multiple" />
+    <img id="img">
+    .....
+    <div id="divDrag" class="drag"></div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-storage.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD4H_AArvgvLf7HEmFBdHS6iUQcG3CTUOM",
+            authDomain: "ming1-d8ff5.firebaseapp.com",
+            databaseURL: "https://ming1-d8ff5.firebaseio.com",
+            projectId: "ming1-d8ff5",
+            storageBucket: "ming1-d8ff5.appspot.com",
+            messagingSenderId: "504139528822",
+            appId: "1:504139528822:web:078db71d75c01af93bfd57",
+            measurementId: "G-ENYG95C00T"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        //var storage = firebase.storage();
+    </script>
+    <script>
+        var url = './11.jpg'
+        var img = document.querySelector('#img')
+
+        function readImage(fileBlob) {
+            // Check if the file is an image.
+            if (fileBlob.type && fileBlob.type.indexOf('image') === -1) {
+                return;
+            }
+            let bloburl = URL.createObjectURL(fileBlob);
+            console.log(bloburl)
+
+            const reader = new FileReader();
+            reader.addEventListener('load', (event) => {
+                img.src = event.target.result;
+                //console.log(reader.result)
+            });
+            reader.readAsDataURL(fileBlob);
+            //firebase
+            // var firebaseConfig = {
+            //     apiKey: "AIzaSyD4H_AArvgvLf7HEmFBdHS6iUQcG3CTUOM",
+            //     authDomain: "ming1-d8ff5.firebaseapp.com",
+            //     databaseURL: "https://ming1-d8ff5.firebaseio.com/",
+            //     projectId: "ming1-d8ff5" //,
+            //     // storageBucket: "<BUCKET>.appspot.com",
+            //     // messagingSenderId: "<SENDER_ID>"
+            // };
+            // firebase.initializeApp(firebaseConfig)
+
+            ToFirebase(fileBlob);
+
+            //console.log(firebase)
+        }
+        //readImage('./11.jpg')
+
+        fetch("./11.jpg")
+            .then((e) => {
+                return e.blob();
+            })
+            .then((e) => {
+                console.log(e)
+                // var images = 
+                //var imgURL = URL.createObjectURL(e)
+                // console.log(outside)
+                readImage(e)
+            })
+
+
+        let divDrag = document.querySelector('#divDrag')
+        divDrag.addEventListener('dragover', (event) => {
+
+            event.stopPropagation();
+            event.preventDefault();
+            // Style the drag-and-drop as a "copy file" operation.
+            event.dataTransfer.dropEffect = 'copy';
+        });
+
+        divDrag.addEventListener('drop', (event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            const fileList = event.dataTransfer.files;
+
+
+            //fileInput.files = e.dataTransfer.files;
+            //console.log(fileList);
+            handleFile(fileList)
+        });
+
+        function handleFile(fileList) {
+            console.log(fileList)
+            let fileUploader = document.querySelector('#file-uploader');
+            fileUploader.files = fileList
+            //console.log(Array.isArray(fileList))
+            //console.log(object)
+        }
+
+        function ToFirebase(blob) {
+            //console.log('ready')
+            // Create a root reference
+            var storageRef = firebase.storage().ref();
+
+            // Create a reference to 'mountains.jpg'
+            var mountainsRef = storageRef.child('MenuImages/mountains.jpg');
+
+            // Create a reference to 'images/mountains.jpg'
+            //var mountainImagesRef = storageRef.child('images/mountains.jpg');
+
+            // While the file names are the same, the references point to different files
+            // mountainsRef.name === mountainImagesRef.name // true
+            // mountainsRef.fullPath === mountainImagesRef.fullPath // false
+
+            // var file = ... // use the Blob or File API
+            mountainsRef.put(blob)
+                .then(function (snapshot) {
+                    console.log('Uploaded a blob or file!');
+                })
+                .catch((e) => {
+                    console.log('error--', e)
+
+                });
+        }
+    </script>
+</body>
+
+</html>

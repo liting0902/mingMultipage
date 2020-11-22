@@ -1,0 +1,108 @@
+:root {
+  --clrGolden: rgb(190, 172, 116);
+  --clrLine1: rgb(255, 255, 255);
+  --clrTitleText: rgb(255, 255, 255);
+  --clrHintText: rgb(127, 115, 78);
+  --clrDarkBlueBg: rgb(6, 16, 27);
+  --clrDarkBackground: rgb(30, 30, 30);
+  --clr1: rgb(62, 62, 62);
+  --clr2: rgb(171, 171, 171);
+}
+
+.btnGolden, .btnGoldenRadius {
+  margin: 15px;
+  display: block;
+  width: 100px;
+  line-height: 2em;
+  text-align: center;
+  /* background-color: var(--clrGolden); */
+  color: var(--clrGolden);
+  border: var(--clrGolden) 2px solid;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.btnGolden:hover, .btnGoldenRadius:hover {
+  color: var(--clrTitleText);
+  background-color: var(--clrGolden);
+  border-radius: 20px;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.btnGoldenRadius {
+  border-radius: 20px;
+}
+
+.btnAdd {
+  width: 30px;
+  height: 30px;
+  color: var(--clrGolden);
+  background-color: var(--clrDarkBlueBg);
+  border: var(--clrGolden) 3px solid;
+  margin: 6px;
+  -webkit-box-shadow: 2px 2px 3px 2px var(--clrGolden);
+  box-shadow: 2px 2px 3px 2px var(--clrGolden);
+  font-size: 1.5em;
+  border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+}
+
+[class^=tooltip] {
+  position: relative;
+  display: inline;
+}
+
+[class^=tooltip]:after {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  content: attr(data-tooltip);
+  padding: 6px 10px;
+  top: 1.4em;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-2px);
+  transform: translateX(-50%) translateY(-2px);
+  background: grey;
+  color: white;
+  white-space: nowrap;
+  z-index: 2;
+  border-radius: 2px;
+  -webkit-transition: opacity 0.2s cubic-bezier(0.64, 0.09, 0.08, 1), -webkit-transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: opacity 0.2s cubic-bezier(0.64, 0.09, 0.08, 1), -webkit-transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: opacity 0.2s cubic-bezier(0.64, 0.09, 0.08, 1), transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: opacity 0.2s cubic-bezier(0.64, 0.09, 0.08, 1), transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1), -webkit-transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+[class^=tooltip]:hover:after {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0);
+}
+
+.bdGolden {
+  border: var(--clrGolden) 2px solid;
+}
+
+.bd1 {
+  border: #f80707 2px solid;
+}
+
+.bd2 {
+  border: #f8f407 2px solid;
+}
+
+.bd3 {
+  border: #076ff8 2px solid;
+}
+
+.bd4 {
+  border: #07f877 2px solid;
+}
+
+/*# sourceMappingURL=style.css.map */

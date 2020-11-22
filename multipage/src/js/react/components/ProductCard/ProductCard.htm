@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Set the base URL for all relative URLs within the document -->
+    <!-- <base href="https://example.com/page.html"> -->
+    <!-- Link to an external CSS file -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style type="text/css">
+        html {
+            height: 100%;
+            background-color: black;
+        }
+
+        body {
+            height: 100%;
+            background-color: black;
+            color: white;
+        }
+
+        .wrapper {
+            /* width:793px; */
+            width: 50%;
+            height: 50%;
+            min-width: 400px;
+            min-height: 50px;
+        }
+
+        /* @media screen and (min-width:100px) */
+    </style>
+
+
+    <!-- <noscript>
+        No JS alternative
+    </noscript> -->
+</head>
+<style>
+    .productCard {
+        border: 2px yellow solid;
+        padding: 10px;
+        margin: 10px;
+    }
+    .productFigure{
+        width: 100px;
+    }
+</style>
+
+<body>
+    <noscript>
+        <p>本頁面需要瀏覽器支持（啟用）JavaScript</p>
+    </noscript>
+    <div cardid="productCard" class="productCard">
+        <div cardid="productName">
+            白斬雞
+        </div>
+        <div cardid="productPrice">
+            NT$140
+        </div>
+        <div>
+            圖片
+        </div>
+        <figure>
+            <figcaption>
+                大辣 | 中辣 | 小辣 | 不辣   胡椒多一點  鹹一點....
+            </figcaption>
+            <img class="productFigure" src="../images/products/四季豆.jpg" alt="Maltese Terrier"> 
+            <img class="productFigure" src="../images/products/白斬雞.jpg" alt="Black Labrador"> 
+            <img class="productFigure" src="../images/products/蔥爆牛肉.jpg" alt="Golden Retriever">
+            <figcaption>
+                ........XXXX
+            </figcaption> 
+        </figure>
+
+        <button>+</button>
+    </div>
+    <div id="divMessage"></div>
+    <hr>
+    <div id="root">root</div>
+    <script type="text/javascript">
+        var divMessage = document.querySelector('#divMessage');
+
+        function showmsg(inMsg) {
+            let newDiv = document.createElement('div');
+            newDiv.textContent = inMsg;
+            divMessage.appendChild(newDiv);
+        }
+    </script>
+
+</body>
+
+</html>

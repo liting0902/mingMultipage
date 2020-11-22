@@ -1,0 +1,79 @@
+.dragFile {
+    border: red 3px solid;
+    height: 200px;
+    width: 300px;
+
+    /* put content center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addProductForm {
+    width: 25%;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+
+/* .txtPreview {
+    
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px;
+} */
+
+.imgPreview {
+    height: 100%;
+    height: 100%;
+}
+
+:local .show {
+    display: inline
+}
+
+:local .noshow {
+    display: none
+}
+
+:local .alignCenter {
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0 auto;
+}
+
+/* @value faveColor: #F0F; */
+/* :root {
+    
+    --foo-color: lime;
+} */
+@value blue2: #0c77f8;
+/* ICSS */
+/* :import("path/to/dep.css") {
+    localAlias: keyFromDep;
+   
+  } */
+/* :export {
+    numberOfThings: 15;
+    defaultBackground: #FFCC00;
+} */
+
+:local .normal {
+    --foo-color: lime;
+    /* color: green; */
+    color: var(--foo-color);
+}
+
+/* var(--foo-color) not working */
+:local .normal2 {
+    /* --foo-color: lime; */
+    /* color: green; */
+    color: var(--foo-color);
+}
+
+
+:local(.normal>label) {
+    color: blue2;
+    /* color: var(--foo-color);; */
+}

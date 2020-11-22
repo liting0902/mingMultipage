@@ -1,0 +1,125 @@
+/* textField2.scss */
+.textField2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: column-reverse;
+          flex-flow: column-reverse;
+  margin-bottom: 1em;
+  /**
+    * Show the placeholder when the input is focused.
+    */
+  /**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when 
+* there's something in the input at all.
+*/
+}
+
+.textField2 label,
+.textField2 input {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+.textField2 input {
+  font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: .3em;
+  cursor: text;
+}
+
+.textField2 input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+.textField2 label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.textField2 input:placeholder-shown + label {
+  color: red;
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  transform: translate(0.4em, 3.1em) scale(1.5);
+  -webkit-transform: translate(0.4em, 3.1em) scale(1.5);
+  -moz-transform: translate(0.4em, 3.1em) scale(1.5);
+  -ms-transform: translate(0.4em, 3.1em) scale(1.5);
+  -o-transform: translate(0.4em, 3.1em) scale(1.5);
+}
+
+.textField2 input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.textField2 ::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: orange;
+  opacity: 0;
+  /* Firefox */
+}
+
+.textField2 :-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: orange;
+  opacity: 0;
+  /* Firefox */
+}
+
+.textField2 ::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: orange;
+  opacity: 0;
+  /* Firefox */
+}
+
+.textField2 ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: orange;
+  opacity: 0;
+  /* Firefox */
+}
+
+.textField2 input:not(:placeholder-shown) + label,
+.textField2 input:focus + label {
+  color: blue;
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+  -webkit-transform: translate(0, 0) scale(1);
+  -moz-transform: translate(0, 0) scale(1);
+  -ms-transform: translate(0, 0) scale(1);
+  -o-transform: translate(0, 0) scale(1);
+}
+
+/**
+* By default, the placeholder should be transparent. Also, it should 
+* inherit the transition.
+*/
+::-webkit-input-placeholder {
+  opacity: 0;
+  transform: translate(0.1em, -0.1em) scale(1);
+  transition: inherit;
+  -webkit-transform: translate(0.1em, -0.1em) scale(1);
+  -moz-transform: translate(0.1em, -0.1em) scale(1);
+  -ms-transform: translate(0.1em, -0.1em) scale(1);
+  -o-transform: translate(0.1em, -0.1em) scale(1);
+  -webkit-transition: inherit;
+  -moz-transition: inherit;
+  -ms-transition: inherit;
+  -o-transition: inherit;
+}

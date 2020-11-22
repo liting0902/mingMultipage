@@ -1,0 +1,1 @@
+tsc genDTS.js --declaration --allowJs --emitDeclarationOnly --outDir .d.ts

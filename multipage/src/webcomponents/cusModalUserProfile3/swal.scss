@@ -1,0 +1,43 @@
+@use '../../styles/form.scss';
+
+
+// .swal-button {
+//     padding: 7px 19px;
+//     border-radius: 2px;
+//     background-color: #4962B3;
+//     font-size: 122px;
+//     border: 1px solid #3e549a;
+//     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+//   }
+.swalbtn {
+    height: 3rem;
+}
+
+// https://ithelp.ithome.com.tw/articles/10200426
+.labelUser{
+    position: relative;
+    input{
+        text-indent: 0px;
+        padding-right: 20px;
+        //padding: 0 0 20px 0;
+        // direction: 'rtl';
+        // text-align: 'left';
+    }
+    &::before {
+        display:inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f007";
+        font-size: 14px;
+        color: green;
+        position: absolute;
+        right:4px;
+        //right: calc(attr(font-size));
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+}

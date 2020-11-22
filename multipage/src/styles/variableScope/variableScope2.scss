@@ -1,0 +1,26 @@
+@import '_variableScope1.scss';
+//$aaa:blue;
+.cde{
+    background-color: $a;
+}
+//@debug $a;
+$a:blue;
+.gg{
+    @extend .abc;
+    $a:blue;
+    // background-color: $a;
+    // $a:green;
+}
+.KK{
+    @include c-comp;
+}
+
+.a1{
+    color: $a;
+}
+@import '_variableScope1.scss';
+// $a 被sub-scss 改寫了!
+.a2{
+    color: $a;
+}
+@debug $a;

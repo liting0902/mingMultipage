@@ -1,0 +1,77 @@
+@use '../form.scss';
+@use 'inputField1';
+*{
+    color: white;
+}
+
+
+.cssFinal .inputField1{
+    @include inputField1.inputField1-AppendValidCheck();
+}
+
+
+.cssCommon .inputField1 input{
+    $fieldWidth:90%;
+    width: $fieldWidth;
+    &:invalid+.fa-check-circle {
+        display: none;
+    }
+}
+
+
+
+
+.labelUser{
+    position: relative;
+    input{
+        color: black;
+        text-indent: 0px;
+        padding-right: 20px;
+        //padding: 0 0 20px 0;
+        // direction: 'rtl';
+        // text-align: 'left';
+    }
+    &::before {
+        display:inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f007";
+        font-size: 14px;
+        color: green;
+        position: absolute;
+        right:4px;
+        //right: calc(attr(font-size));
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+}
+// .inputField1:has(> input){
+//     background-color: yellow;
+// }
+// .divIpt1{
+//     position: relative;
+// }
+// .ipt1{
+//     color: black;
+// }
+// .ipt1::before {
+//     display:inline-block;
+//     font-family: "Font Awesome 5 Free";
+//     font-weight: 900;
+//     content: "\f007";
+//     font-size: 114px;
+//     color: lime;
+//     position: absolute;
+//     right:4px;
+//     //right: calc(attr(font-size));
+//     top: 50%;
+//     transform: translateY(-50%);
+//     -webkit-transform: translateY(-50%);
+//     -moz-transform: translateY(-50%);
+//     -ms-transform: translateY(-50%);
+//     -o-transform: translateY(-50%);
+// }

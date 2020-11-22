@@ -1,0 +1,257 @@
+[
+    {
+        "addDateTime": {
+            "seconds": 1600588020,
+            "nanoseconds": 603000000
+        },
+        "imgUrl": "https://firebasestorage.googleapis.com/v0/b/ming1-d8ff5.appspot.com/o/Products%2F1mmn9i3r-0008.jpg?alt=media&token=51eeae00-54aa-4382-9a35-c350de903ddf",
+        "tag": "#",
+        "autoNum": 1,
+        "isActived": false,
+        "price": 30,
+        "imgFileName": "1mmn9i3r-0008.jpg",
+        "productId": "0001-8vn",
+        "name": "蜜汁豆干(方塊)",
+        "category": "soybean"
+    },
+    {
+        "addDateTime": {
+            "seconds": 1600588020,
+            "nanoseconds": 762000000
+        },
+        "isActived": false,
+        "price": 20,
+        "productId": "0002-27z",
+        "tag": "#",
+        "autoNum": 2,
+        "imgUrl": "null",
+        "imgFileName": "null",
+        "category": "soybean",
+        "name": "片狀豆干"
+    },
+    {
+        "price": 20,
+        "tag": "#",
+        "category": "soybean",
+        "addDateTime": {
+            "seconds": 1600588020,
+            "nanoseconds": 937000000
+        },
+        "imgFileName": "null",
+        "autoNum": 3,
+        "productId": "0003-zaj",
+        "imgUrl": "null",
+        "name": "百頁豆腐",
+        "isActived": true
+    },
+    {
+        "addDateTime": {
+            "seconds": 1600588021,
+            "nanoseconds": 140000000
+        },
+        "imgUrl": "null",
+        "price": 20,
+        "productId": "0004-4lx",
+        "isActived": false,
+        "category": "soybean",
+        "autoNum": 4,
+        "tag": "#",
+        "imgFileName": "null",
+        "name": "豆皮(濕魯)"
+    },
+    {
+        "tag": "#",
+        "imgUrl": "null",
+        "price": 30,
+        "productId": "0005-7yx",
+        "name": "葫蘆素雞",
+        "imgFileName": "null",
+        "isActived": false,
+        "category": "soybean",
+        "autoNum": 5,
+        "addDateTime": {
+            "seconds": 1600588021,
+            "nanoseconds": 326000000
+        }
+    },
+    {
+        "price": 20,
+        "imgFileName": "null",
+        "imgUrl": "null",
+        "tag": "#",
+        "category": "soybean",
+        "name": "小素條",
+        "productId": "0006-dih",
+        "autoNum": 6,
+        "addDateTime": {
+            "seconds": 1600588021,
+            "nanoseconds": 508000000
+        },
+        "isActived": false
+    },
+    {
+        "autoNum": 7,
+        "isActived": false,
+        "tag": "#",
+        "addDateTime": {
+            "seconds": 1600588021,
+            "nanoseconds": 707000000
+        },
+        "imgUrl": "null",
+        "imgFileName": "null",
+        "price": 60,
+        "name": "鴨翅",
+        "productId": "0007-8zz",
+        "category": "duck"
+    },
+    {
+        "price": 50,
+        "isActived": false,
+        "tag": "#",
+        "addDateTime": {
+            "seconds": 1600588021,
+            "nanoseconds": 900000000
+        },
+        "category": "duck",
+        "autoNum": 8,
+        "imgFileName": "null",
+        "name": "鴨胗",
+        "productId": "0008-eqc",
+        "imgUrl": "null"
+    },
+    {
+        "imgFileName": "null",
+        "isActived": false,
+        "addDateTime": {
+            "seconds": 1600588022,
+            "nanoseconds": 64000000
+        },
+        "price": 70,
+        "imgUrl": "null",
+        "tag": "#",
+        "autoNum": 9,
+        "name": "鹹水雞",
+        "category": "chicken",
+        "productId": "0009-em4"
+    },
+    {
+        "imgUrl": "null",
+        "autoNum": 10,
+        "price": 240,
+        "category": "chicken",
+        "isActived": false,
+        "productId": "0010-rxx",
+        "tag": "#",
+        "imgFileName": "null",
+        "addDateTime": {
+            "seconds": 1600588022,
+            "nanoseconds": 229000000
+        },
+        "name": "烤全雞"
+    },
+    {
+        "addDateTime": {
+            "seconds": 1600588022,
+            "nanoseconds": 446000000
+        },
+        "category": "chicken",
+        "price": 120,
+        "autoNum": 11,
+        "imgFileName": "null",
+        "imgUrl": "null",
+        "isActived": false,
+        "tag": "#",
+        "name": "燻雞腿",
+        "productId": "0011-uq5"
+    },
+    {
+        "productId": "0012-l1x",
+        "addDateTime": {
+            "seconds": 1600588022,
+            "nanoseconds": 551000000
+        },
+        "isActived": false,
+        "imgUrl": "null",
+        "tag": "#",
+        "category": "beef",
+        "imgFileName": "null",
+        "price": 150,
+        "autoNum": 12,
+        "name": "牛腱"
+    },
+    {
+        "imgUrl": "null",
+        "category": "beef",
+        "isActived": false,
+        "autoNum": 13,
+        "addDateTime": {
+            "seconds": 1600588022,
+            "nanoseconds": 721000000
+        },
+        "tag": "#",
+        "imgFileName": "null",
+        "price": 150,
+        "productId": "0013-pyy",
+        "name": "牛肚"
+    },
+    {
+        "tag": "#",
+        "name": "豬腱",
+        "productId": "0014-llk",
+        "price": 100,
+        "imgFileName": "null",
+        "isActived": false,
+        "category": "pork",
+        "addDateTime": {
+            "seconds": 1600588022,
+            "nanoseconds": 837000000
+        },
+        "autoNum": 14,
+        "imgUrl": "null"
+    },
+    {
+        "imgFileName": "null",
+        "category": "others",
+        "tag": "#",
+        "name": "滷蛋",
+        "price": 10,
+        "autoNum": 15,
+        "addDateTime": {
+            "seconds": 1600588022,
+            "nanoseconds": 990000000
+        },
+        "productId": "0015-1s3",
+        "isActived": false,
+        "imgUrl": "null"
+    },
+    {
+        "category": "others",
+        "isActived": false,
+        "name": "海帶",
+        "autoNum": 16,
+        "imgFileName": "null",
+        "price": 10,
+        "productId": "0016-lje",
+        "addDateTime": {
+            "seconds": 1600588023,
+            "nanoseconds": 115000000
+        },
+        "tag": "#",
+        "imgUrl": "null"
+    },
+    {
+        "addDateTime": {
+            "seconds": 1600588023,
+            "nanoseconds": 282000000
+        },
+        "imgFileName": "null",
+        "name": "花枝丸",
+        "productId": "0017-fww",
+        "imgUrl": "null",
+        "isActived": false,
+        "price": 10,
+        "autoNum": 17,
+        "tag": "#",
+        "category": "others"
+    }
+]

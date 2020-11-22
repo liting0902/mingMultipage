@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel=icon href=favicon.png sizes="32x32" type="image/png">
+    <!-- ============ bootstrap ============ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script> -->
+    <!-- ============ font awesome ============ -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    
+    <!-- <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="../../webcomponents/cusFullPageScroll/fullPageScroll.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../webcomponents/cusModalLogin3/cusModalLogin.css"> -->
+    
+
+    <!-- <style>
+        .fa-shopping-cart[data-count]:after {
+            position: relative;
+            right: 6px;
+            top: -12px;
+            content: attr(data-count);
+            font-size: 50%;
+            padding: .5em;
+            border-radius: 50%;
+            line-height: .75em;
+            color: white;
+            background: rgba(255, 0, 0, .85);
+            text-align: center;
+            display: inline-block;
+            min-width: 2em;
+            min-height: 2em;
+            font-weight: bold;
+        }
+    </style> -->
+</head>
+
+<body class="BodySetting">
+    <noscript>
+        <p>本頁面需要瀏覽器支持（啟用）JavaScript</p>
+    </noscript>
+    <div id="sizer">
+        <div class="d-block d-sm-none d-md-none d-lg-none d-xl-none" data-size="xs"></div>
+        <div class="d-none d-sm-block d-md-none d-lg-none d-xl-none" data-size="sm"></div>
+        <div class="d-none d-sm-none d-md-block d-lg-none d-xl-none" data-size="md"></div>
+        <div class="d-none d-sm-none d-md-none d-lg-block d-xl-none" data-size="lg"></div>
+        <div class="d-none d-sm-none d-md-none d-lg-none d-xl-block" data-size="xl"></div>
+    </div>
+    <!-- ================ Nvabar ================= -->
+    <nav id="navbar1" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">明記</a>
+        <!-- =====Center===== -->
+        <a id="aOpenModalShopcart" href="#" class="navbar-brand mx-auto text-center d-lg-none">
+            <span class="fa-stack">
+                <i class="fas fa-shopping-cart" data-count="99"></i>
+                <span class="numberBadge nbg1">99</span>
+            </span>
+            <!-- <span class="fa-stack fa-1x d-lg-none">
+                <i class="fa fa-shopping-cart fa-stack-2x"></i>
+                <span class="fa-stack-1x numberBadge">99</span>
+            </span> -->
+            <!-- <i class="fas fa-shopping-cart d-lg-none" data-count="99"></i> -->
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#divMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ================ menu ================= -->
+        <!-- <button class="btn btn-primary" data-target="#divMenu" data-toggle="collapse" aria-expanded="false"
+            aria-controls="divMenu">Text</button> -->
+
+
+        <div class="collapse navbar-collapse" id="divMenu">
+            <!-- <a href="#" class="navbar-brand">Hidden Brand</a> -->
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a href="#history" class="nav-link">老店歷史</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#news" class="nav-link">最新消息</a>
+                </li>
+                <li class="nav-item" id="liOrderProducts">
+                    <a href="#page-react" class="nav-link" id="aOrderProducts">產品訂購</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#qanda" class="nav-link">常見問題(購物)</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contactus" class="nav-link">聯絡我們</a>
+                </li>
+                <!-- ========== test =========== -->
+                <li class="nav-item dropdown d-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Test
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a id="aTestLogin" class="dropdown-item" href="#">login</a>
+                        <a id="aTestLogout" class="dropdown-item" href="#">logout</a>
+                        <a id="aTemp" class="dropdown-item" href="#">Temp</a>
+                        
+                    </div>
+                </li>
+                <li class="nav-item d-none">
+                    <!-- <a href="#contactus" class="nav-link">聯絡我們</a> -->
+                    <button id="btnstatic">static</button>
+                    <button id="btnreact">react</button>
+                    <!-- <button id="btn1">1</button>
+                    <button id="btn2">2</button>
+                    <button id="btn3">3</button>
+                    <button id="btn4">4</button> -->
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <!-- ========= LOGIN BUTTON =========== -->
+                <li class="nav-item" id="liLogin">
+                    <a class="nav-link" href="#"><i class="fas fa-user"></i>登入</a>
+                </li>
+                <li class="nav-item dropdown displayNone" id="liUserDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        <!-- ========= USER EMAIL DISPLAY =========== -->
+                        <i class="fas fa-user"></i><span id="spanDisplayEmail">tristan829@gmail.com</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" id="aMyOrder" href="#">我的訂單</a>
+                        <a class="dropdown-item" id="aMyProfile" href="#">個人資料</a>
+                        <!-- <a class="dropdown-item" id="aChangePWD" href="#">修改密碼</a> -->
+                        <a class="dropdown-item" id="aLogout" href="#">登出</a>
+                    </div>
+                </li>
+                <li class="nav-item d-none d-lg-inline">
+                    <span class="nav-link" href="#ThisIsNotATag">
+                        <!-- <span class="fa-stack fa-xs">
+                            <i class="fas fa-shopping-cart fa-stack-2x" data-count="99"></i>
+                        </span> -->
+                        <style>
+                            .displayInline {
+                                display: inline;
+                                margin-right: 10px;
+                            }
+                        </style>
+                        <!-- https://stackoverflow.com/questions/9067892/how-to-align-two-elements-on-the-same-line-without-changing-html -->
+                        <!-- <i class="fas fa-shopping-cart" data-count="99"></i> -->
+
+                        <span class="fa-stack displayInline">
+                            <i class="fas fa-shopping-cart fa-stack-1x" data-count="99"></i>
+                            <span class="numberBadge nbg2">
+                                99
+                            </span>
+                        </span>
+                        <span class="displayInline">購物車</span>
+                        <!-- <i class="fas fa-shopping-cart" data-count="99"></i> -->
+
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- =============== page-static ================= -->
+    <div id="page-static" class="mt-5">
+        <!-- <pre id="history" class="bd-primary text-info">
+==========================老店歷史==========================================
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+        </pre>
+
+        <pre id="news" class="bd-primary text-warning">
+==========================最新消息==========================================
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+        </pre>
+        <pre id="qanda" class="bd-primary text-warning">
+==========================常見問題==========================================
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+        </pre>
+        <pre id="contactus" class="bd-primary text-warning">
+==========================聯絡我們==========================================
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+sdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdfsdfasdfsdfasdfasdf
+        </pre> -->
+    </div>
+
+    <!-- =============== page-react ================= -->
+    <div id="page-react" class="mt-5">
+        <div id="root"></div>
+    </div>
+</body>
+
+</html>

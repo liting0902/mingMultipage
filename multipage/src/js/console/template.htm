@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+            background-color: black;
+        }
+
+        body {
+            height: 100%;
+            background-color: black;
+            color: white;
+        }
+
+        .bd-primary {
+            border: 5px solid rgb(62, 95, 241);
+        }
+
+        .bd-2 {
+            border: 3px solid rgb(77, 241, 62);
+            margin: 5px;
+        }
+
+        .bd-2 div {
+            margin: 8px;
+        }
+
+        
+
+        .myButton {
+            box-shadow: inset 0px 1px 0px 0px #97c4fe;
+            background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+            background-color: #3d94f6;
+            border-radius: 6px;
+            border: 1px solid #337fed;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #1570cd;
+            margin: 9px;
+            /* transition-duration: 2s; */
+        }
+
+        .myButton:hover {
+            background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+            background-color: #1e62d0;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bd-primary">
+        <div class="bd-2">
+            <div>
+                <label for="iptProdName">Product Name:</label>
+                <input type="text" id="iptProdName">
+            </div>
+            <div>
+                <label for="iptProdPrice">Product Price $:</label>
+                <input type="text" id="iptProdPrice">
+            </div>
+            <button class="myButton">ADD Product</button>
+        </div>
+
+        <div class="bd-2">
+            <button class="myButton">Refresh</button>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

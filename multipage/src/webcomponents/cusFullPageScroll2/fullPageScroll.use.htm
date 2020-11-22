@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullPageScroll</title>
+    <style>
+        html,
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <link rel="stylesheet" href="./fullPageScroll.css">
+</head>
+
+<body>
+
+    <script type="module">
+        import fullPageScroll from './fullPageScroll.js'
+        import {useComponent} from '../../js/others/useComponent3.js'
+
+        let newTagName = "cus-full-page-scroll";
+        useComponent(newTagName,'./fullPageScroll.htm',fullPageScroll)
+            .then((compUI) => {
+                //class-instance APPEAR!!  you can set template now~~~
+                let newComponent = new compUI.ctor(compUI.templateContent);
+                document.body.appendChild(newComponent)
+                newComponent.scrollToElem('#news')
+                // let newComponent = new htmlFile.ctor(htmlFile.templateContent);
+                // document.body.appendChild(newComponent)
+                
+                
+                
+                
+                //======= tsetArea =======
+                // newComponent.appendTestArea(testArea)
+                // newComponent.proxyUI.divAccount_Show = true
+
+                // let selectUIStatus = document.querySelector('#selectUIStatus');
+                // for(let prop in ENUM_PhoneStatus){
+                //     selectUIStatus.add(new Option(prop,prop));
+                // }
+                // selectUIStatus.addEventListener('change',(e) => {
+                //     newComponent.proxyUI.enumPhoneStatus = e.target.value;
+                // })
+                // let selectLoginMethod= document.querySelector('#selectLoginMethod');
+                // for(let prop in ENUM_LoginMethod){
+                //     selectLoginMethod.add(new Option(prop,prop));
+                // }
+                // selectLoginMethod.addEventListener('change',(e) => {
+                //     newComponent.proxyUI.enumLoginMethod = e.target.value;
+                // })
+
+                // let btnSetDefaultValue_plfdsa = document.querySelector('#btnSetDefaultValue_plfdsa');
+                // btnSetDefaultValue_plfdsa.addEventListener('click',(e) => {
+                //     e.preventDefault()
+                //     newComponent.iptPhone.value = '+886 0926923281'
+                //     newComponent.iptPhoneVerifyCode.value = '111111'
+                //     newComponent.proxyUI.divInputPhoneFailed_Text = '預設訊息 輸入號碼錯誤'
+                //     newComponent.proxyUI.divVerifyFailed_Text = '預設訊息 驗證碼錯誤'
+                //     let bb = document.querySelector('#btnVerifyNumber')
+                //     console.log(bb)
+                // })
+                
+                
+            })
+            .catch((err) => {
+                console.log(err)
+            });
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+/*switchButton.scss*/
+
+/* The switch - the box around the slider */
+@mixin getSliderSize($labelHeight, $margin) {
+    //$margin:4px;
+    //$sliderHeight: $labelHeight - (3 * $margin);
+    // 定義 CSS
+    height: $labelHeight - (2 * $margin); //26px
+    width: $labelHeight - (2 * $margin); //26px;
+    bottom: $margin; //($labelHeight - $sliderHeight)/2 //4px;
+}
+@mixin getClass($labelHeight, $labelMargin, $sliderColor) {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: $labelHeight; //34px;
+
+    /* Hide default HTML checkbox */
+    & input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* The slider */
+    & span {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 34px;
+        background-color: #ccc;
+        transition: .2s;
+        -webkit-transition: .2s;
+        -moz-transition: .2s;
+        -ms-transition: .2s;
+        -o-transition: .2s;
+    }
+
+    & span:before {
+        position: absolute;
+        content: "";
+
+        // height: 26px;
+        // bottom: 4px;
+
+        @include getSliderSize($labelHeight, $labelMargin);
+        left: 4px;
+        background-color: white;
+        border-radius: 50%;
+        transition: .2s;
+        -webkit-transition: .2s;
+        -moz-transition: .2s;
+        -ms-transition: .2s;
+        -o-transition: .2s;
+    }
+
+    & input:checked+span {
+        background-color: $sliderColor;
+    }
+
+    & input:focus+span {
+        box-shadow: 0 0 1px $sliderColor;
+    }
+
+    & input:checked+span:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+        -moz-transform: translateX(26px);
+        -o-transform: translateX(26px);
+    }
+}
+

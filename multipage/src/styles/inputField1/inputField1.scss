@@ -1,0 +1,142 @@
+
+
+$iptFontSize:14px;
+$spanFontSize:12px;
+$iptSpanGap:7px;
+
+.inputField1 {
+    // display: flex;
+    // align-items: center;
+    padding: .3rem;
+    
+    span {
+        text-transform: uppercase;
+        font-size: $spanFontSize;
+        //12px:;
+        opacity: 0.4;
+        display: inline;
+        //vertical-align:middle;
+        //display: table-cell;
+        vertical-align: middle;
+        position: relative;
+        //top: $iptSpanGap;
+        //7px:;
+        transition: all 0.5s ease-in-out;
+        margin-left: 20px;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+    }
+
+    input {
+        display: inline;
+        //padding-top: 20px;
+        font-size: $iptFontSize;
+        //14px:;
+        color: #fff;
+        border: none;
+        width: 100%;
+        padding: 20px 10px;
+        // display: block;
+        height: 15px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0);
+        overflow: hidden;
+        //margin-top: 15px;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+
+        &:focus {
+            outline: 0;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0);
+            color: #fff;
+        }
+
+        &:focus+span {
+            opacity: 0.6;
+        }
+    }
+}
+
+@mixin inputCheckValid($iconSize:1.4rem, $fontColor:lime, $rightOffsetPercent:0.5) {
+    //class by input
+    width: calc(100% - #{$iconSize});
+    &+span {
+        display: inline;
+        position: relative;
+        opacity: 1;
+        &::before {
+            position: absolute;
+            display: inline;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f058";
+            font-size: $iconSize;
+            color: $fontColor;
+            //right: $iconSize;
+            right: #{-$iconSize*$rightOffsetPercent};
+            //right: calc(attr(font-size));
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+        }        
+    }
+    &:invalid + span{
+        &::before{
+            display:none;
+        }
+    }
+}
+.inputCheckValid{
+    @include inputCheckValid(1.4rem, lime, 0.5);
+}
+// @mixin inputField1-AppendValidCheck ($iconSize:1.4rem, $fontColor:lime) {
+//     input{
+//         width: calc(100% - #{$iconSize});
+//     }
+//     input+span {
+//         display: inline;
+//         position: relative;
+//         opacity: 1;
+//         &::before {
+//             position: absolute;
+//             display: inline;
+//             font-family: "Font Awesome 5 Free";
+//             font-weight: 900;
+//             content: "\f058";
+//             font-size: $iconSize;
+//             color: $fontColor;
+//             //right: $iconSize;
+//             right: #{-$iconSize/2};
+//             //right: calc(attr(font-size));
+//             top: 50%;
+//             transform: translateY(-50%);
+//             -webkit-transform: translateY(-50%);
+//             -moz-transform: translateY(-50%);
+//             -ms-transform: translateY(-50%);
+//             -o-transform: translateY(-50%);
+//         }        
+//     }
+//     // input:invalid{
+//     //     background-color: red;
+//     // }
+//     input:invalid + span{
+//         &::before{
+//             display:none;
+//         }
+//     }
+// }
+
+// .inputField1-validCheck{
+//     @include inputField1-AppendValidCheck(1.4rem, lime);
+// }

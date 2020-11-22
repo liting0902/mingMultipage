@@ -1,0 +1,100 @@
+@use '../../styles/base/base.scss';
+@use '../../webcomponents/cusFullPageScroll/fullPageScroll.scss';
+//@use '../../webcomponents/cusFullPageScroll/fullPageScroll.scss';
+
+$colorRoyalBlue:base.$colorRoyalBlue;
+$colorWhite:base.$colorWhite;
+
+html,
+body {
+    height: 100%;
+    // overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.navbar-custom {
+    background-color: #fbd915;
+}
+
+/* Modify brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: green;
+}
+
+.BodySetting {
+    background-color: $colorRoyalBlue;
+    color: $colorWhite;
+}
+
+/* .bgBlack {
+    background-color: black;
+} */
+
+.bd-primary {
+    border: 5px solid rgb(62, 95, 241);
+}
+
+.colorBlack {
+    color: black;
+}
+
+.displayNone {
+    display: none;
+}
+
+.numberBadge {
+    background-color: red;
+    color: white;
+    position: relative;
+    border-radius: 50%;
+    padding: .4em;
+    margin: 0px;
+    font-size: 50%;
+    line-height: .9em;
+    text-align: center;
+    /* display: inline-block; */
+    font-weight: bold;
+    /* content: attr(data-count); */
+    /* span width失效 */
+    /* min-width: 2em;
+    min-height: 2em; */
+}
+
+.nbg1 {
+    top: -1em;
+    left: -1.4em;
+}
+
+.nbg2 {
+    /* top: -4em;
+    left: 1em; */
+    top: -1em;
+    left: 1.4em;
+
+}
+
+/* .fa-stack{
+    width: 3em;
+    padding: 0px;
+    margin: 0px;
+} */
+
+/* .fa-shopping-cart[data-count]:after {
+    position: relative;
+    right: 6px;
+    top: -12px;
+    content: attr(data-count);
+    font-size: 50%;
+    padding: .5em;
+    border-radius: 50%;
+    line-height: .75em;
+    color: white;
+    background: rgba(255, 0, 0, .85);
+    text-align: center;
+    display: inline-block;
+    min-width: 2em;
+    min-height: 2em;
+    font-weight: bold;
+} */
+

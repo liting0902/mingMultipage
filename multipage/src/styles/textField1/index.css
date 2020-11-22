@@ -1,0 +1,73 @@
+/*textField1.scss*/
+.textField1 {
+  position: relative;
+  margin-bottom: 45px;
+  /* Label */
+  /* active */
+  /* Underline */
+  /* active */
+}
+.textField1 input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  -webkit-appearance: none;
+  display: block;
+  background: #fafafa;
+  color: #636363;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #757575;
+}
+.textField1 ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: orange;
+  opacity: 0;
+  /* Firefox */
+}
+.textField1 input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+.textField1 input:focus {
+  outline: none;
+}
+.textField1 label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: all 0.2s ease;
+}
+.textField1 input:not(:placeholder-shown) ~ label, .textField1 input:focus ~ label {
+  top: -20px;
+  transform: scale(0.75);
+  left: -2px;
+  /* font-size: 14px; */
+  color: #4a89dc;
+}
+.textField1 span {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.textField1 span:before, .textField1 span:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #4a89dc;
+  transition: all 0.2s ease;
+}
+.textField1 span:before {
+  left: 50%;
+}
+.textField1 span:after {
+  right: 50%;
+}
+.textField1 input:focus ~ span:before, .textField1 input:focus ~ span:after {
+  width: 50%;
+}

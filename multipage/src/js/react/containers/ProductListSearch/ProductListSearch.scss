@@ -1,0 +1,269 @@
+
+@use '../../../../styles/base/base.scss';
+// .mt50{
+//     margin-top: 60px;
+// }
+
+// bd1,bd2,bd3,bd4{
+//     border-color: transparent;
+// }
+
+$colorRoyalBlue:rgb(6, 16, 27);
+$colorRoyalBlue:base.$colorRoyalBlue;
+$colorWhite:white;
+$colorWhite:base.$colorWhite;
+$colorGold:base.$colorGold;
+
+// =================== boxProductListSearch
+.boxProductListSearch{
+    max-width: 970px;
+}
+// =================== boxDeliveryTimeAddress
+.boxDeliveryTimeAddress {
+    // margin: 10px;
+    margin-top: base.$navbarHeight;
+}
+// =================== ulScrollButtons
+.ulScrollButtons {
+    @extend .b-ulStyleNone;
+    z-index: 11;
+    position: sticky;
+    top: 54px;
+    background-color: $colorRoyalBlue;
+
+    // height: 80px;
+    .btnCategory {
+        @extend .b-btnGolden;
+        color: $colorGold;
+        width: 7rem;
+        padding: .3rem;
+        margin: .7rem;
+    }
+
+}
+// =================== Category Card
+// .boxCategoryCard{
+//     max-width: 970px;
+// }
+.CategoryCard {
+    margin-top: 60px;
+    background-color: $colorRoyalBlue;
+    width: 90%;
+    & .headerTitle {
+        font-size: 2em;
+        font-weight: bold;
+        height: 2em;
+        border-bottom: white solid 3px;
+        text-align: center;
+        color: $colorGold;
+    }
+    
+}
+// =================== productCard
+%addButton {
+    @extend .b-btnGolden;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+
+    &:hover {
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+
+}
+.productCard {
+    // display: block;
+    width: 250px;
+
+    .imgContainer {
+        @extend .b-imgContainer;
+    }
+
+    .priceBottom {
+        display: flex;
+        //flex-direction: space-between;
+        justify-content: center;
+        align-items: center;
+
+        // padding: .5rem;
+        & div,
+        & button {
+            margin: 0 .9rem;
+        }
+        .addButton{
+            @extend %addButton;
+        }
+    }
+    .hrDot {
+        border: 1px dashed white;
+    }
+    // .addButton{
+    //     margin-right: auto;
+    // }
+    //@extend bd1;
+    // border: 2px yellow solid;
+    // padding: 10px;
+    // margin: 10px;
+    // z-index: 2;
+}
+// =================== Shopcart
+.boxShopCart {
+    display: inline-block;
+    border: 2px solid $colorGold;
+    padding: 1rem;
+    margin: 10px;
+    width: 300px;
+    max-height: 80vh;
+    overflow: auto;
+
+
+    position: fixed;
+    top: 60px;
+    left: 970px;
+
+}
+
+.tableShopcart {
+    /* display: inline-flex; */
+    width: 100%;
+    
+    /* padding: .4em; */
+    border-collapse: collapse;
+    /* border-collapse: separate;
+      border-spacing: 15px; */
+    font-size: 1.5em;
+
+    .trShopitem {
+        /* display: block; */
+        border-bottom: $colorGold 4px solid;
+        .tdProductName{
+            vertical-align: bottom;
+        }
+        .tdPriceAmount {
+            text-align: right;
+
+            /* margin: auto 0 auto auto; */
+            .divPriceAmount {
+                float: right;
+
+                .divCellPrice {
+                    margin-top: 2em;
+                }
+                .divboxHorizontal {
+                    display: flex;
+                    .btnAdd{
+                        @extend %addButton;
+                        // border: 2px solid red;
+                    }
+                    .divCellAmount {
+                        margin: auto 5px;
+                        /* margin: auto; */
+                    }
+                    // .btnAdd {
+                    //     // display: inline-flex;
+                    //     // justify-content: center;
+                    //     // /* center the content horizontally */
+                    //     // align-items: center;
+                    //     // position: relative;
+                    //     display: flex;
+                    //     justify-content: center;
+                    //     align-items: center;
+                    //     color: $colorGold;
+                    //     cursor: pointer;
+                    //     width: 1em;
+                    //     height: 1em;
+                    //     // .btnContent{
+                    //     //   width: .5em;
+                    //     //   height: .5em;
+                    //     //   position: absolute;  
+                    //     //   //top:-.4em;
+                    //     //   margin: auto 0 ;
+                    //     //   // left:-1px;
+                    //     // }
+                    //     background-color: $colorRoyalBlue;
+                    //     border: $colorGold 3px solid;
+                    //     margin: 6px;
+                    //     // ::before{
+                    //     //   position: absolute;
+
+                    //     //   content: '+++++++++++++++++++++++';
+
+                    //     //   top: -17px;
+                    //     //   left:0;
+                    //     // }
+
+                    //     -webkit-box-shadow: 2px 2px 3px 2px $colorGold;
+                    //     box-shadow: 2px 2px 3px 2px $colorGold;
+
+                    //     // font-size: 1.5em;
+                    //     border-radius: 9px;
+                    //     -webkit-border-radius: 9px;
+                    //     -moz-border-radius: 9px;
+                    //     -ms-border-radius: 9px;
+                    //     -o-border-radius: 9px;
+                    // }
+
+                    
+
+                }
+
+            }
+        }
+    }
+}
+
+#modalShopcart{
+    background-color: $colorRoyalBlue;
+    
+    .modal-content{
+        background-color: lighten($color: $colorRoyalBlue, $amount: 7%);
+    }
+
+}
+// =================== bottomBuy
+.bottomBuy {
+    margin: 10px;
+    border: red 2px solid;
+    height: 40px;
+    background-color: coral;
+    position: fixed;
+    color: black;
+
+    bottom: -9px;
+    left: 0px;
+    right: 0px;
+}
+
+
+
+
+
+
+:local(.modal-dialog) {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+:local(.modal-content) {
+    width: 100vw;
+    height: auto;
+    min-height: 100%;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+
+

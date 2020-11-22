@@ -1,0 +1,29 @@
+.img1{
+    max-width: 100px;
+    max-height: 100px;
+}
+
+html {
+    height: 100%;
+    background-color: black !important;
+}
+
+body {
+    height: 100%;
+    background-color: black !important;
+    color: white !important;
+}
+.edit1{
+    background-color: red;
+}
+.table{
+    color: white !important;
+}
+/* tbody{
+    color: white !important;
+} */
+
+.table-hover tbody tr:hover {
+    color: lime !important;
+    background-color: rgba(0,0,0,.075);
+}

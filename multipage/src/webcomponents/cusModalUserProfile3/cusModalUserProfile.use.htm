@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../../template/style.css"> -->
+    <!-- ============ firebase ============ -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.2/firebase-firestore.js"></script>
+    <!-- ============ bootstrap ============ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <!-- ============ font awesome ============ -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <!-- ============ sweet alert ============ -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css"> -->
+    <!-- ============ gapi ============ -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <style>
+        html,
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .colorBlack {
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="cusModalUserProfile.use.css">
+</head>
+
+<body>
+    <!-- Hello, GAPI! -->
+    <!-- <script src="https://apis.google.com/js/api.js"></script> -->
+    <div id="testArea" style="border: orange 4px solid;">
+        <button id="btnEmailSignin">Email Signin</button>
+        <button id="btnSignin">Google Signin</button>
+        <button id="btnSignout">Signout</button>
+
+        <label>UIStatus</label>
+        <select id="selectUIStatus">
+        </select>
+        <select id="selectLoginMethod"></select>
+        <select id="selectEmailVerify">
+            <option value="true">Email ok</option>
+            <option value="false">Email not verify</option>
+        </select>
+        <div>
+            <button id="btntest1">test1</button>
+            <button id="btnSetDefaultValue_plfdsa">預設值</button>
+        </div>
+    </div>
+    <script type="module">
+        import firebaseConfig from '../firebaseConfig.js'
+        import {UserProfile} from '../../js/dataDefine/index.js'
+        import testData from '../../../test/testdata.js'
+        import cusModalUserProfile,{ENUM_PhoneStatus, ENUM_LoginMethod} from './cusModalUserProfile.js'
+        import {useComponent} from '../../js/others/useComponent3.js'
+        import Firebase_MJS,{Email_ResendPassword} from '../../js/firebase/Firebase.js'
+
+        
+        let app = firebase.initializeApp(firebaseConfig);
+        let FirebaseMJS = new Firebase_MJS(firebase, app);
+        firebase.auth().useDeviceLanguage();
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                //console.log("LOG:: user", user)
+                
+                // User is signed in.
+                console.log('authChange === ', {
+                    dispalyName: user.dispalyName,
+                    email: user.email,
+                    emailVerified:user.emailVerified,
+                    phoneNumber: user.phoneNumber,
+                    photoURL: user.photoURL,
+                    uid: user.uid,
+                    providerData:user.providerData,
+                })
+
+                let uid = testData.userId;
+
+                uid = user.uid//firebase.auth().currentUser.uid
+                console.log("LOG:: uid", uid)
+                
+                newComponent.loadDbProfile(uid);
+                //newComponent.showModal(true)
+                
+                
+                //======= tsetArea =======
+                newComponent.appendTestArea(testArea)
+                newComponent.proxyUI.divAccount_Show = true
+
+                let selectUIStatus = document.querySelector('#selectUIStatus');
+                for(let prop in ENUM_PhoneStatus){
+                    selectUIStatus.add(new Option(prop,prop));
+                }
+                selectUIStatus.addEventListener('change',(e) => {
+                    newComponent.proxyUI.enumPhoneStatus = e.target.value;
+                })
+                let selectLoginMethod= document.querySelector('#selectLoginMethod');
+                for(let prop in ENUM_LoginMethod){
+                    selectLoginMethod.add(new Option(prop,prop));
+                }
+                selectLoginMethod.addEventListener('change',(e) => {
+                    newComponent.proxyUI.enumLoginMethod = e.target.value;
+                })
+
+                let selectEmailVerify= document.querySelector('#selectEmailVerify');
+                // for(let prop in ENUM_LoginMethod){
+                //     selectEmailVerify.add(new Option(prop,prop));
+                // }
+                selectEmailVerify.addEventListener('change',(e) => {
+                    let sValue = e.target.value.toLowerCase()
+                    //sValue = "True"
+                    let blValue = (sValue=="true")
+                    newComponent.proxyUI.isEmailVerified = blValue;
+                })
+
+                
+
+                let btnSetDefaultValue_plfdsa = document.querySelector('#btnSetDefaultValue_plfdsa');
+                btnSetDefaultValue_plfdsa.addEventListener('click',(e) => {
+                    e.preventDefault()
+                    newComponent.iptPhone.value = '+886 0926923281'
+                    newComponent.iptPhoneVerifyCode.value = '111111'
+                    newComponent.proxyUI.divInputPhoneFailed_Text = '預設訊息 輸入號碼錯誤'
+                    newComponent.proxyUI.divVerifyFailed_Text = '預設訊息 驗證碼錯誤'
+                    let bb = document.querySelector('#btnVerifyNumber')
+                    console.log(bb)
+                })
+                
+                //https://medium.com/google-cloud/using-google-apis-with-firebase-auth-and-firebase-ui-on-the-web-46e6189cf571
+                //https://medium.com/@vanderlin/google-api-firebase-auth-1b18416b4e74
+                //https://github.com/msukmanowsky/gapi-firebase
+                //https://firebase.google.com/docs/reference/js/firebase.auth.GoogleAuthProvider?hl=zh-TW
+                //https://firebase.google.com/docs/reference/js/firebase.auth.GoogleAuthProvider?hl=zh-TW#credential
+                let btntest1 = document.querySelector('#btntest1');
+                btntest1.addEventListener('click',(e) => {
+                    e.preventDefault()
+                    newComponent.saveUserData({phoneNumber:'333'})
+                    
+                });
+                
+            } else {
+                // No user is signed in.
+                console.log('No user is signed in.')
+                
+            }
+        });
+        let btnEmailSignin = document.querySelector('#btnEmailSignin');
+        btnEmailSignin.addEventListener('click',EmailSignIn)
+        function EmailSignIn(){
+            let email = 'kent.lin@caketech.com.tw';
+            let password = '11111111';
+            firebase.auth().signInWithEmailAndPassword(email, password)
+        }
+        let btnSignin = document.querySelector('#btnSignin');
+        btnSignin.addEventListener('click',(e) => {
+            e.preventDefault()
+            FirebaseMJS.Google_Register_Login();
+        });
+        let btnSignout = document.querySelector('#btnSignout');
+        btnSignout.addEventListener('click',(e) => {
+            e.preventDefault()
+            FirebaseMJS.SignOut()
+        });
+
+        let testArea = document.querySelector('#testArea');
+        let newTagName = "cus-modal-user-profile";
+        var newComponent
+        useComponent(newTagName,'./cusModalUserProfile.htm',cusModalUserProfile)
+            .then((htmlFile) => {
+                let plugins = {
+                    Swal,
+                    Email_ResendPassword,
+                }
+                //class-instance APPEAR!!  you can set template now~~~
+                newComponent = new htmlFile.ctor(htmlFile.templateContent,plugins);
+                document.body.appendChild(newComponent)
+                
+                newComponent.setDataDefine({
+                    UserProfile: UserProfile
+                });
+                newComponent.showModal(true)
+                newComponent.showTestUI();
+                
+            })
+            .catch((err) => {
+                console.log(err)
+            });
+    </script>
+</body>
+
+</html>

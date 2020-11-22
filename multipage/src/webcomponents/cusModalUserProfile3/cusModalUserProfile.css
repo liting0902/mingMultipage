@@ -1,0 +1,327 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #06101b;
+  color: white;
+}
+
+.b-displayNone {
+  display: none;
+}
+
+.b-textCenter {
+  text-align: center;
+}
+
+.b-flexStart {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.b-flexCenter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.b-ulStyleNone {
+  list-style-type: none;
+}
+
+.b-imgContainer {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.b-imgContainer img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.b-btnGolden {
+  display: block;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  /*background-color: $colorGold;
+  */
+  color: #beac74;
+  border: #beac74 2px solid;
+  font-weight: bold;
+  font-size: 1.2em;
+  border-radius: 20px;
+}
+.b-btnGolden:hover {
+  color: white;
+  background-color: #beac74;
+  transition-duration: 0.3s;
+  border-radius: 20px;
+}
+.b-btnGolden:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.inputField1 {
+  padding: 0.3rem;
+}
+.inputField1 span {
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.4;
+  display: inline;
+  vertical-align: middle;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  margin-left: 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.inputField1 input {
+  display: inline;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 20px 10px;
+  height: 15px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.inputField1 input:focus {
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+}
+.inputField1 input:focus + span {
+  opacity: 0.6;
+}
+
+.inputCheckValid {
+  width: calc(100% - 1.4rem);
+}
+.inputCheckValid + span {
+  display: inline;
+  position: relative;
+  opacity: 1;
+}
+.inputCheckValid + span::before {
+  position: absolute;
+  display: inline;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  font-size: 1.4rem;
+  color: lime;
+  right: -0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.inputCheckValid:invalid + span::before {
+  display: none;
+}
+
+/* bootstrapLogin.scss */
+* {
+  box-sizing: border-box;
+}
+
+.formModifyPassword .inputCheckValid {
+  width: calc(100% - 1.4rem);
+}
+.formModifyPassword .inputCheckValid + span {
+  display: inline;
+  position: relative;
+  opacity: 1;
+}
+.formModifyPassword .inputCheckValid + span::before {
+  position: absolute;
+  display: inline;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  font-size: 1.4rem;
+  color: lime;
+  right: -1.96rem;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.formModifyPassword .inputCheckValid:invalid + span::before {
+  display: none;
+}
+
+.boxUserProfile .emailColor {
+  color: lime;
+}
+.boxUserProfile .googleColor {
+  color: #db3236;
+}
+.boxUserProfile .titleWhite {
+  color: white;
+}
+.boxUserProfile .cancelHover:hover {
+  color: white;
+}
+.boxUserProfile .modalBackground,
+.boxUserProfile .modal-header,
+.boxUserProfile .modal-body,
+.boxUserProfile .modal-footer,
+.boxUserProfile .footerHeight {
+  background-color: #19416e;
+}
+.boxUserProfile .footerHeight {
+  height: 10px;
+}
+.boxUserProfile .titleText {
+  color: white;
+}
+.boxUserProfile [name=sign] {
+  display: none;
+}
+.boxUserProfile .signInHtm,
+.boxUserProfile .signUpHtm,
+.boxUserProfile .forgetPwdHtm {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all 0.4s linear;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+}
+.boxUserProfile .modal-header .leftArrow {
+  cursor: pointer;
+}
+.boxUserProfile .modal-header input[name=headerSign] {
+  display: none;
+}
+.boxUserProfile .modal-header .radioSignin:checked ~ .leftArrow, .boxUserProfile .modal-header .radioSignin:checked ~ .labelSignup, .boxUserProfile .modal-header .radioSignin:checked ~ .labelForgetPwd {
+  display: none;
+}
+.boxUserProfile .modal-header .radioSignup:checked ~ .labelSignin, .boxUserProfile .modal-header .radioSignup:checked ~ .labelForgetPwd {
+  display: none;
+}
+.boxUserProfile .modal-header .radioForgetPwd:checked ~ .labelSignin, .boxUserProfile .modal-header .radioForgetPwd:checked ~ .labelSignup {
+  display: none;
+}
+.boxUserProfile .modal-body .uiCkbox-emailVerified:checked ~ .inputField1 .emailWarning, .boxUserProfile .modal-body .uiCkbox-emailVerified:checked ~ .emailWarning {
+  display: none;
+}
+.boxUserProfile .modal-body .uiCkbox-isAccountOfGoogle:checked ~ #btnResendPassword {
+  display: none;
+}
+.boxUserProfile .modal-body .inputField1 input {
+  width: 50%;
+}
+.boxUserProfile .modal-body .inputField1 input:invalid:invalid + .fa-check-circle {
+  display: none;
+}
+.boxUserProfile .modal-body .divMessageFailed {
+  border: red 2px solid;
+  text-align: center;
+  padding: 0.4rem;
+  color: white;
+  border-radius: 15px;
+}
+.boxUserProfile .modal-body .divVerifyCode {
+  border: 2px solid #beac74;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.boxUserProfile .modal-body .divVerifyCode .width30 {
+  width: 30%;
+}
+.boxUserProfile .modal-body .fa-exclamation-triangle {
+  color: yellow;
+}
+.boxUserProfile .btnSave {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: #498dd7;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+}
+.boxUserProfile .btnSave:hover {
+  background: #73a7e0;
+  box-shadow: 0px 4px 35px -5px #73a7e0;
+  cursor: pointer;
+}
+.boxUserProfile .btnSave:focus {
+  outline: none;
+}
+.boxUserProfile .btnLighten {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: #498dd7;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+  width: auto;
+  display: inline;
+}
+.boxUserProfile .btnLighten:hover {
+  background: #73a7e0;
+  box-shadow: 0px 4px 35px -5px #73a7e0;
+  cursor: pointer;
+}
+.boxUserProfile .btnLighten:focus {
+  outline: none;
+}

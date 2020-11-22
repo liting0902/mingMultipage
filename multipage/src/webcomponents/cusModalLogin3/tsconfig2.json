@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "allowJs": true,
+        "strictNullChecks": false,
+        "target": "es6",
+        "module": "commonjs",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        // "types": [
+        //     "firebase"
+        // ],
+        "typeRoots": [
+            "./node_modules/@types",
+            "./"
+        ]
+
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ]
+}

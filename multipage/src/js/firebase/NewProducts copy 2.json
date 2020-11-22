@@ -1,0 +1,103 @@
+[
+    {
+        "name": "蜜汁豆干(方塊)",
+        "price": 30,
+        "category": "soybean",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "片狀豆干",
+        "price": 20,
+        "category": "soybean",
+        "imgUrl": "http://fakeimg.pl/540x620/282828/EAE0D0/"
+    },
+    {
+        "name": "百頁豆腐",
+        "price": 20,
+        "category": "soybean",
+        "imgUrl": "http://fakeimg.pl/240x620/282828/EAE0D0/"
+    },
+    {
+        "name": "豆皮(濕魯)",
+        "price": 20,
+        "category": "soybean",
+        "imgUrl": "http://fakeimg.pl/640x220/282828/EAE0D0/"
+    },
+    {
+        "name": "葫蘆素雞",
+        "price": 30,
+        "category": "soybean",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "小素條",
+        "price": 20,
+        "category": "soybean",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "鴨翅",
+        "price": 60,
+        "category": "duck",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "鴨胗",
+        "price": 50,
+        "category": "duck",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "鹹水雞",
+        "price": 70,
+        "category": "chicken",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "烤全雞",
+        "price": 240,
+        "category": "chicken",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "燻雞腿",
+        "price": 120,
+        "category": "chicken",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "牛腱",
+        "price": 150,
+        "category": "beef",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "牛肚",
+        "price": 150,
+        "category": "beef",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "豬腱",
+        "price": 100,
+        "category": "pork",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "滷蛋",
+        "price": 10,
+        "category": "others",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "海帶",
+        "price": 10,
+        "category": "others",
+        "imgUrl": "http://fakeimg.pl/440x320/282828/EAE0D0/"
+    },
+    {
+        "name": "花枝丸",
+        "price": 10,
+        "category": "others"
+    }
+]

@@ -1,0 +1,30 @@
+@mixin getSigninButton($color, $width) {
+    //background-color: #d3d3d3;
+    font-family: 'Montserrat', sans-serif;
+    //color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background-color: $color;
+    //#1161ed:;
+    color: #FFF;
+    width: $width;
+    padding: 10px 20px;
+    display: block;
+    height: 39px;
+    border-radius: 20px;
+    //margin-top: 30px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    text-transform: uppercase;
+
+    &:hover {
+        background: lighten($color: $color, $amount: 10%); //#4082f5;
+        box-shadow: 0px 4px 35px -5px lighten($color: $color, $amount: 10%); //#4082f5;
+        cursor: pointer;
+        //transition: all 0.3s ease-in-out;    
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

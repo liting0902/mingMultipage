@@ -1,0 +1,226 @@
+@charset "UTF-8";
+.inputField1 {
+  padding: 0.3rem;
+}
+.inputField1 span {
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.4;
+  display: inline;
+  vertical-align: middle;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  margin-left: 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.inputField1 input {
+  display: inline;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 20px 10px;
+  height: 15px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.inputField1 input:focus {
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+}
+.inputField1 input:focus + span {
+  opacity: 0.6;
+}
+
+.inputCheckValid {
+  width: calc(100% - 1.4rem);
+}
+.inputCheckValid + span {
+  display: inline;
+  position: relative;
+  opacity: 1;
+}
+.inputCheckValid + span::before {
+  position: absolute;
+  display: inline;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  font-size: 1.4rem;
+  color: lime;
+  right: -0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.inputCheckValid:invalid + span::before {
+  display: none;
+}
+
+/* bootstrapLogin.scss */
+:root {
+  --clrGolden: rgb(190, 172, 116);
+  --clrLine1: rgb(255, 255, 255);
+  --clrTitleText: rgb(255, 255, 255);
+  --clrHintText: rgb(127, 115, 78);
+  --clrDarkBlueBg: rgb(6, 16, 27);
+  --clrDarkBackground: rgb(30, 30, 30);
+  --clr1: rgb(62, 62, 62);
+  --clr2: rgb(171, 171, 171);
+  --bg2: #003C4E;
+  --bg3: #006D73;
+  --bg4: #17A080;
+}
+
+.modalBackground {
+  background-color: #19416e;
+}
+
+.titleText {
+  color: white;
+}
+
+[name=sign] {
+  display: none;
+}
+
+.signInHtm,
+.signUpHtm,
+.forgetPwdHtm {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all 0.4s linear;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+}
+
+.modal-header .leftArrow {
+  cursor: pointer;
+}
+.modal-header input[name=headerSign] {
+  display: none;
+}
+.modal-header .radioSignin:checked ~ .leftArrow, .modal-header .radioSignin:checked ~ .labelSignup, .modal-header .radioSignin:checked ~ .labelForgetPwd {
+  display: none;
+}
+.modal-header .radioSignup:checked ~ .labelSignin, .modal-header .radioSignup:checked ~ .labelForgetPwd {
+  display: none;
+}
+.modal-header .radioForgetPwd:checked ~ .labelSignin, .modal-header .radioForgetPwd:checked ~ .labelSignup {
+  display: none;
+}
+
+.modal-body .ckboxSignIn:checked ~ .signInHtm {
+  position: relative;
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+}
+.modal-body .ckboxSignIn:checked ~ .leftArrow {
+  display: none;
+}
+.modal-body .ckboxSignUp:checked ~ .signUpHtm {
+  position: relative;
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+}
+.modal-body .ckboxForgetPwdHtm:checked ~ .forgetPwdHtm {
+  position: relative;
+  transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+}
+.modal-body .ckboxKeepSignin {
+  padding: 10px;
+}
+.modal-body .ckboxKeepSignin input {
+  margin: 10px;
+}
+.modal-body .divSignupHtm,
+.modal-body .divForgetPassword {
+  cursor: pointer;
+}
+
+.btnEmailSignin {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: #4082f5;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+.btnEmailSignin:hover {
+  background: #70a2f8;
+  box-shadow: 0px 4px 35px -5px #70a2f8;
+  cursor: pointer;
+}
+.btnEmailSignin:focus {
+  outline: none;
+}
+
+.btnGoogleSignin {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background-color: #db3236;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+.btnGoogleSignin:hover {
+  background: #e35d61;
+  box-shadow: 0px 4px 35px -5px #e35d61;
+  cursor: pointer;
+}
+.btnGoogleSignin:focus {
+  outline: none;
+}

@@ -1,0 +1,3 @@
+{"scripts": {
+    "aa":"sass ./ ../../pages/index/ --watch --no-source-map"
+}}

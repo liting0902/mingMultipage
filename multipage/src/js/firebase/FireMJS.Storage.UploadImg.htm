@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireMJS upload</title>
+    <style>
+        html,
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .btnAll {
+            height: 40px;
+            font-size: x-large;
+        }
+
+        .TopArea {
+            border: green 3px solid;
+            padding: 10px;
+        }
+
+        .imgCss {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .divPutImage {
+            display: inline-block;
+            border: red 3px solid;
+            width: 100px;
+            height: 100px;
+            font-size: x-large;
+        }
+
+        .ButtonArea {
+            display: inline-block;
+            border: red 3px solid;
+            width: 600px;
+            /* height: 200px; */
+            font-size: x-large;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-storage.js"></script>
+</head>
+
+<body>
+    <div class="TopArea">
+        <div>
+            <button class="btnAll" id="btnFetchImageCake">Fetch Image Cake</button>
+            <button class="btnAll" id="btnFetchImageVega">Fetch Image Vega</button>
+            <button class="btnAll" id="btnUploadStorage">Upload Storage</button>
+        </div>
+        <div>
+            <label for="iptBlobSize">Blob size</label>
+            <input id="iptBlobSize" type="text">
+        </div>
+        <div>
+            <label for="iptProductId">Product Id</label>
+            <input id="iptProductId" type="text">
+            <label for="iptImgUrl">ImgURL</label>
+            <input id="iptImgUrl" type="text">
+            <label for="iptImgFileName">ImgFileName</label>
+            <input id="iptImgFileName" type="text">
+        </div>
+        <div>
+            <input id="iptSelectImage" type="file" accept="image/png, image/jpeg" multiple="multiple" />
+            <!-- <div className="dragFile" onDragOver={this.dragFile_onDragOver} onDrop={this.dragFile_onDrop}>
+                <div className={` ${this.state.imgPreviewActive === false ? styles.show : styles.noshow} `}>拖曳圖片至此</div>
+                <img src={this.state.imgBlobUrl} className={`imgPreview ${this.state.imgPreviewActive === true ? styles.show + ' ' + styles.alignCenter : styles.noshow}`} alt="XXXX" />
+            </div> -->
+        </div>
+        <div id="divPutImage" class="divPutImage"><img id="imgPutImage" class="imgCss" src="" alt="put image"></div>
+        <!-- <div id="divPutImage2" class="divPutImage">ddddd</div> -->
+    </div>
+    <script type="module" src="./FireMJS.Storage.UploadImg.js"></script>
+    
+</body>
+
+</html>

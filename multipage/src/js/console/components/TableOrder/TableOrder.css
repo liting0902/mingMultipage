@@ -1,0 +1,58 @@
+.img1 {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+html {
+    height: 100%;
+    background-color: black !important;
+}
+
+body {
+    height: 100%;
+    background-color: black !important;
+    color: white !important;
+}
+
+.edit1 {
+    background-color: red;
+}
+
+#mainTable {
+    color: white !important;
+}
+#mainTable td{
+    vertical-align: middle !important;
+    text-align: center;
+}
+/* tbody{
+    color: white !important;
+} */
+
+.table-hover tbody tr:hover {
+    color: yellow !important;
+    background-color: rgba(0, 0, 0, .075);
+}
+
+.imgSrcNull {
+    border: 2px red solid;
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.tdCenterBox{
+    position: relative;
+    border:1px solid #000;
+}
+.bd1{
+    position: absolute;
+    width:100px;
+    height:50px;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+    background:#f60;
+}
+

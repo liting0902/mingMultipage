@@ -1,0 +1,69 @@
+.fullPageScroll{
+    margin:-8px;
+    // In most major browsers, the default margin is 8px on all sides. It is defined in pixels by the user-agent-stylesheet your browser provides
+    position: relative;
+    scroll-snap-type: mandatory y;
+    width:100vw;
+    height: 100vh;
+    scroll-behavior: smooth;
+    .section{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-blend-mode: multiply;
+        scroll-snap-align: start;
+        &:nth-child(1){
+           
+            background-image: url('spices.jpg') ;
+            // background-repeat: no-repeat;
+            // background-position: center;
+        }
+        &:nth-child(2){
+            //background: rgb(148, 148, 148)  url('99012.jpg');
+            background-image: url('99012.jpg') ;
+            background-position: top;
+        }
+        &:nth-child(3){
+            //background: rgb(66, 66, 66)   url('kitware.jpg') ;
+            background-image:url('kitware.jpg') ;
+            
+        }
+        &:nth-child(4){
+            //background:rgb(65, 62, 62)  url("_old_street.jpg");
+            background-image:url("_old_street.jpg");
+            
+        }
+        &:nth-child(n){
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .content{
+            position: absolute;
+            bottom:50px;
+            left:50px;
+            color:black;
+            width:50vw;
+            height:25vh;
+            padding:20px;
+            background-color: rgba(255, 255, 255, 0.575);
+            font-family: Arial, Helvetica, sans-serif;
+            
+            h2{
+                
+                font-size: 1.5rem;
+                
+            }
+            p{
+                font-size: 1rem;
+                width:50%;
+            }
+            // a{
+            //     display: inline-block;
+            //     width:100%;
+            //     height: 100%;
+            //     background: url('./location-map.png') no-repeat;
+            // }
+        }
+    }
+}

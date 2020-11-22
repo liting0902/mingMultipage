@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <div>dddd</div>
+
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+
+    <script class="mocha-init">
+        mocha.setup({
+            ui: 'tdd',
+        });
+        mocha.setup({
+            allowUncaught: true,
+            asyncOnly: false,
+            bail: true,
+            checkLeaks: true,
+            forbidOnly: true,
+            forbidPending: true,
+            global: ['MyLib'],
+            retries: 3,
+            slow: '100',
+            timeout: '2000',
+            ui: 'bdd',
+        });
+        mocha.checkLeaks();
+    </script>
+    <script type="module" src="tset.tools.js" class="mocha-exec"></script>
+    <!-- <script src="test.object.js"></script>
+    <script src="test.xhr.js"></script> -->
+    <script type="module" class="mocha-exec">
+        // import firebaseConfig from '../../../src/lib/firebaseConfig.mjs'
+        // console.log(firebaseConfig)
+        // mocha.run();
+    </script>
+</body>
+
+</html>
